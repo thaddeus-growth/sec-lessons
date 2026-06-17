@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 0001 — SEC Filing 101: los tres formularios clave</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "ET Book", "Palatino Linotype", Palatino, "Noto Serif SC", "Source Han Serif SC", serif;
+    background: #fffff8;
+    color: #111;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 0.3rem; font-weight: 400; font-style: italic; }
+  p { margin: 0.7rem 0; }
+  .sidenote {
+    float: right; clear: right; width: 180px; margin-right: -210px;
+    font-size: 0.82rem; color: #555; line-height: 1.4;
+    margin-top: 0.2rem;
+  }
+  @media (max-width: 960px) {
+    .sidenote { float: none; width: auto; margin-right: 0; margin-top: 0; font-style: italic; }
+  }
+  blockquote {
+    margin: 1rem 0; padding: 0.5rem 1rem;
+    border-left: 3px solid #c44; background: #fff8f6;
+    font-style: italic; color: #444;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
+  th { font-weight: 500; background: #f8f8f4; }
+  .quiz { background: #f4f4ee; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 6px; }
+  .quiz h3 { margin-top: 0; font-style: normal; }
+  .quiz p { margin: 0.5rem 0; }
+  .quiz input[type="text"] { width: 100%; padding: 0.4rem 0.6rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+  .quiz .reveal { margin-top: 0.8rem; }
+  .quiz .reveal details { margin-top: 0.4rem; }
+  .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  .next { background: #f0f0e8; padding: 1rem 1.2rem; margin: 3rem 0 1rem; font-size: 0.95rem; }
+  a { color: #a33; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .takeaway { background: #fff3cd; border-left: 3px solid #f0b400; padding: 0.6rem 1rem; margin: 1.5rem 0; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  Lesson 0001 · <a href="../reference/sec-form-types.html">Referencia: tabla resumen de tipos de formularios SEC</a> · <a href="0002-financial-statements.html">Siguiente lección: entender los tres estados financieros →</a>
+</div>
+
+<h1>SEC Filing 101<br><small style="font-size:1rem;color:#666;">Tres formularios para entender el sistema de信息披露 de las empresas cotizadas estadounidenses</small></h1>
+
+<p>
+  Todas las empresas cotizadas en EE. UU. deben presentar periódicamente documentos (filings) ante la SEC (Securities and Exchange Commission, la Comisión de Valores de EE. UU.), y hacerlos públicos a todo el mundo a través del sistema EDGAR.
+  Este sistema de信息披露 (revelación de información) es una de las infraestructuras de mercado de capitales más maduras y transparentes del mundo.
+</p>
+
+<p>
+  Para un inversor estratégico, <strong>los SEC filings son inteligencia competitiva gratuita, legal y estructurada</strong>: más precisa que las noticias, más objetiva que los informes de terceros y más fiable que los rumores informales.
+  Y cualquiera puede acceder a ellos, sin pagar ni registrarse.
+</p>
+
+<div class="takeaway">
+  Idea clave: los SEC filings no son una "carga de cumplimiento", sino情报 estratégica que los competidores están obligados a公开arte periódicamente.
+</div>
+
+<h2>Los tres formularios clave</h2>
+
+<p>
+  La SEC tiene más de un centenar de tipos de formularios, pero para monitorizar a los competidores solo necesitas关注 tres:
+</p>
+
+<table>
+  <tr>
+    <th>Formulario</th>
+    <th>Frecuencia</th>
+    <th>Contenido</th>
+    <th>Valor para monitorizar competidores</th>
+  </tr>
+  <tr>
+    <td><strong>10-K</strong><br><span style="font-size:0.85rem;color:#888">Informe anual</span></td>
+    <td>Una vez al año<br>(60-90 días tras el cierre del ejercicio fiscal)</td>
+    <td>La信息披露 anual más completa: estados financieros auditados, descripción del negocio, factores de riesgo, análisis de la dirección (MD&A)</td>
+    <td>⭐⭐⭐⭐⭐<br>La instantánea más completa de "cómo es una empresa"</td>
+  </tr>
+  <tr>
+    <td><strong>10-Q</strong><br><span style="font-size:0.85rem;color:#888">Informe trimestral</span></td>
+    <td>Una vez por trimestre<br>(40-45 días tras el cierre del trimestre)</td>
+    <td>Datos financieros trimestrales (no auditados) + actualización de cambios materiales del período</td>
+    <td>⭐⭐⭐⭐⭐<br>Para seguir la tendencia de resultados y detectar puntos de inflexión</td>
+  </tr>
+  <tr>
+    <td><strong>8-K</strong><br><span style="font-size:0.85rem;color:#888">Informe de eventos materiales</span></td>
+    <td>Esporádico<br>(4 días hábiles tras el evento)</td>
+    <td>Cualquier evento "importante para los inversores": cambios directivos, adquisiciones, quiebras, alianzas, alertas de resultados...</td>
+    <td>⭐⭐⭐⭐⭐<br>El canal más rápido para conocer los movimientos estratégicos de los competidores</td>
+  </tr>
+</table>
+
+<div class="sidenote">
+  El año fiscal de Carvana coincide con el año natural (cierre el 31 de diciembre), por lo que su 10-K se presenta cada año en febrero, y los 10-Q en abril, julio y octubre.
+</div>
+
+<h2>10-K: el "informe médico anual" de la empresa</h2>
+
+<p>
+  <strong>El 10-K es el documento más importante de una empresa cotizada estadounidense.</strong> Es un documento legal: todo su contenido tiene responsabilidad legal (las declaraciones falsas pueden ser sancionadas por la SEC o dar lugar a demandas colectivas de accionistas).
+</p>
+
+<p>La estructura de un 10-K es fija e incluye principalmente las siguientes partes:</p>
+
+<table>
+  <tr><th>Parte</th><th>Significado</th><th>Foco de monitorización de competidores</th></tr>
+  <tr><td>Item 1. Business</td><td>Descripción del negocio</td><td>Modelo de negocio, fuentes de ingresos, panorama competitivo según la propia empresa</td></tr>
+  <tr><td>Item 1A. Risk Factors</td><td>Factores de riesgo</td><td>⚠️ Los riesgos que la propia empresa reconoce — la parte más valiosa</td></tr>
+  <tr><td>Item 7. MD&A</td><td>Análisis y discusión de la dirección</td><td>Explicación de la dirección sobre los resultados, juicio sobre tendencias,展望 futura</td></tr>
+  <tr><td>Item 8. Financial Statements</td><td>Estados financieros auditados</td><td>Ingresos, beneficios, activos, pasivos,现金流 (los datos más fiables)</td></tr>
+  <tr><td>Item 15. Exhibits</td><td>Anexos</td><td>Contratos, acuerdos de adquisición y otros documentos originales</td></tr>
+</table>
+
+<blockquote>
+  <strong>Orden de lectura para el inversor estratégico:</strong><br>
+  Item 1A (riesgos) → Item 7 (qué dice la dirección) → Item 8 (qué dicen los números) → Item 1 (si el modelo de negocio sigue siendo válido)
+</blockquote>
+
+<h2>10-Q: el "resumen del chequeo trimestral"</h2>
+
+<p>
+  El 10-Q puede entenderse como una "versión reducida del 10-K + los datos del último trimestre". Los datos no están auditados, pero la empresa sigue teniendo responsabilidad legal. Su valor principal:
+</p>
+<ul>
+  <li><strong>Seguir tendencias</strong>: juntando los 10-Q de cuatro trimestres se puede ver la trayectoria de cambio de la empresa a lo largo de un año</li>
+  <li><strong>Detectar puntos de inflexión</strong>: ¿el crecimiento de los ingresos se está acelerando o frenando? ¿el margen bruto mejora o se deteriora?</li>
+  <li><strong>Más rápido que el 10-K</strong>: el 10-K requiere esperar a la auditoría anual, el 10-Q sale en los 40 días tras el cierre del trimestre</li>
+</ul>
+
+<h2>8-K: el "telediario" de la empresa</h2>
+
+<p>
+  El 8-K es el formulario más especial: <strong>no se presenta con una periodicidad fija, es dirigido por eventos y tiene la mayor时效性 (oportunidad temporal)</strong>. La ley exige que la empresa presente un 8-K en los 4 días hábiles siguientes a cualquier "evento material".
+</p>
+
+<p>La SEC codifica todos los posibles "eventos materiales" con <strong>números de Item</strong>, del 1.01 al 9.01. Conocer qué corresponde a cada Item es la habilidad central de la monitorización de competidores (se trata en detalle en la siguiente lección).</p>
+
+<p>Por ahora,记住 los más importantes:</p>
+
+<table>
+  <tr><th>Item</th><th>Evento</th><th>Significado para monitorizar competidores</th></tr>
+  <tr><td>2.02</td><td>Publicación de resultados</td><td>Permite ver las cifras clave antes del 10-Q; a veces es una "alerta previa" (pre-announcement) si los resultados difieren mucho de lo esperado</td></tr>
+  <tr><td>5.02</td><td>Cambios de directivos/directores</td><td>¿Baja el CFO? ¿Cambia el CEO? Puede ser señal de problemas internos</td></tr>
+  <tr><td>1.01</td><td>Contratos materiales</td><td>¿Gran pedido firmado? ¿Cambio de proveedor? ¿Alianza estratégica?</td></tr>
+  <tr><td>2.01</td><td>Adquisición/venta de activos materiales</td><td>Comprar empresas, vender negocios — la dirección estratégica ha cambiado</td></tr>
+</table>
+
+<div class="takeaway">
+  Pequeño test: si solo pudieras monitorizar un tipo de SEC form, elige 8-K. Porque cubre todos los "eventos inesperados" que quedan fuera del 10-K y el 10-Q.
+</div>
+
+<h2>Un ejemplo concreto: Carvana en los últimos 5 meses</h2>
+
+<p>Esta es la cronología de filings de Carvana (CVNA) en 2026 (datos reales extraídos de nuestro sistema):</p>
+
+<table>
+  <tr><th>Fecha</th><th>Formulario</th><th>Significado</th></tr>
+  <tr><td>2026-06-15</td><td>Form 144</td><td>Plan de减持 (venta) de un insider (no hay que alarmarse demasiado, puede ser algo planificado)</td></tr>
+  <tr><td>2026-06-11</td><td>Form 4</td><td>Transacción efectiva de un insider (debe declarar cuántas acciones compró/vendió y a qué precio)</td></tr>
+  <tr><td>2026-05-06</td><td>8-K</td><td>⚠️ Items 5.02 (cambios directivos), 5.03 (modificación de estatutos), 5.07 (votación de accionistas)</td></tr>
+  <tr><td>2026-04-29</td><td>10-Q</td><td>📊 Informe del primer trimestre (Revenue $6.4B, Net Income $250M)</td></tr>
+  <tr><td>2026-04-29</td><td>8-K</td><td>📊 Items 2.02 (publicación de resultados), 9.01 (anexos)</td></tr>
+  <tr><td>2026-02-18</td><td>10-K</td><td>📊 Informe anual 2025</td></tr>
+</table>
+
+<p>
+  En esta cronología, el 8-K del 6 de mayo es el más值得关注: cambio directivo + modificación de estatutos + votación de accionistas, tres señales aparecen a la vez.
+  En comparación, el Form 144 y el Form 4 de junio son transacciones de insiders, algo rutinario en una empresa del tamaño de Carvana.
+</p>
+
+<hr>
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<h3>Q1: Si quieres conocer los "riesgos que la propia empresa reconoce" de un competidor, ¿qué parte deberías mirar?</h3>
+<p><input type="text" id="q1" placeholder="Introduce tu respuesta (formulario + parte)"></p>
+<div class="reveal">
+  <details>
+    <summary>Haz clic para ver la respuesta</summary>
+    <p><strong>Item 1A (Risk Factors) del 10-K</strong></p>
+    <p>Esta es la lista de riesgos que la propia empresa enumera, obligada a divulgar "cualquier riesgo que pueda afectar material y adversamente al negocio". Al ser una declaración legal de la empresa, es relativamente objetiva. Los riesgos comunes divulgados por las empresas de二手车 incluyen: riesgo de calidad de los vehículos, riesgo de incumplimiento de préstamos, impacto macroeconómico en la demanda de二手车 y cambios regulatorios.</p>
+  </details>
+</div>
+
+<h3>Q2: ¿Qué formulario debe presentarse "en los 4 días hábiles siguientes al evento"?</h3>
+<p><input type="text" id="q2" placeholder="Introduce tu respuesta (código del formulario)"></p>
+<div class="reveal">
+  <details>
+    <summary>Haz clic para ver la respuesta</summary>
+    <p><strong>8-K</strong></p>
+    <p>La particularidad del 8-K es que es "dirigido por eventos", a diferencia del 10-K y el 10-Q que se presentan con una periodicidad fija. Así que cuando veas que un competidor presenta repentinamente un 8-K, ábrelo de inmediato: lo más probable es que haya algún cambio值得关注.</p>
+  </details>
+</div>
+
+<h3>Q3: ¿Qué datos financieros están auditados, los del 10-K o los del 10-Q?</h3>
+<p><input type="text" id="q3" placeholder="Introduce tu respuesta"></p>
+<div class="reveal">
+  <details>
+    <summary>Haz clic para ver la respuesta</summary>
+    <p><strong>Los datos del 10-K están auditados de forma independiente; los del 10-Q no.</strong></p>
+    <p>Auditados significa que una firma de auditoría externa (por ejemplo, las Big Four) ha verificado la exactitud de los datos financieros. Los datos del 10-Q son报告ados por la propia empresa, sin auditoría, por lo que en teoría tienen cierto espacio de "ajuste" (aunque la empresa sigue teniendo responsabilidad legal). Para un análisis en profundidad, toma los datos del 10-K como referencia y calibra con ellos los del 10-Q.</p>
+  </details>
+</div>
+
+</div>
+
+<div class="next">
+  <strong>Vista previa de la siguiente lección:</strong> <a href="0002-financial-statements.html">Lesson 0002 — Cómo extraer de 10-K/10-Q los indicadores financieros más importantes para el sector de二手车</a><br>
+  <strong>Lectura recomendada:</strong> <a href="https://www.sec.gov/files/reada10k.pdf">How to Read a 10-K</a> de la SEC (en inglés, PDF de 3 páginas, 15 minutos de lectura)<br>
+  <strong>Referencia rápida:</strong> <a href="../reference/sec-form-types.html">Tabla resumen de tipos de formularios SEC</a> (puedes imprimirla y tenerla en el escritorio)
+</div>
+
+<hr style="margin-top:3rem;">
+<p style="font-size:0.85rem;color:#888;">
+  Si tienes cualquier duda, pregúntame directamente en la conversación — soy tu profesor.<br>
+  <em>El objetivo de esta serie no es convertirte en un experto de la SEC, sino que seas capaz de explicar claramente en las reuniones del departamento de inversión estratégica "por qué esta información es importante".</em>
+</p>
+
+</body>
+</html>

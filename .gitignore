@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.~lock.*
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temp / build
+*.tmp
+*.bak
+*.orig
+
+# Python (if anyone adds scripts later)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/

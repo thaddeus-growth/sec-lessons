@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 0002 — 二手车行业核心财务指标</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "ET Book", "Palatino Linotype", Palatino, "Noto Serif SC", serif;
+    background: #fffff8; color: #111; line-height: 1.6;
+    max-width: 720px; margin: 2rem auto; padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+  p { margin: 0.7rem 0; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+  th { font-weight: 500; background: #f8f8f4; }
+  .quiz { background: #f4f4ee; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 6px; }
+  .quiz h3 { margin-top: 0; }
+  .quiz details { margin-top: 0.4rem; }
+  .sidenote { float: right; clear: right; width: 180px; margin-right: -210px; font-size: 0.82rem; color: #555; line-height: 1.4; }
+  @media (max-width: 960px) { .sidenote { float: none; width: auto; margin-right: 0; font-style: italic; } }
+  blockquote { margin: 1rem 0; padding: 0.5rem 1rem; border-left: 3px solid #c44; background: #fff8f6; font-style: italic; color: #444; }
+  .takeaway { background: #fff3cd; border-left: 3px solid #f0b400; padding: 0.6rem 1rem; margin: 1.5rem 0; font-weight: 500; }
+  .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  .next { background: #f0f0e8; padding: 1rem 1.2rem; margin: 3rem 0 1rem; font-size: 0.95rem; }
+  a { color: #a33; text-decoration: none; }
+  .real-data { background: #f0f7f0; border-left: 3px solid #4a4; padding: 0.8rem 1rem; margin: 1rem 0; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  Lesson 0002 · <a href="0001-sec-filing-101.html">← 上一课：SEC Filing 101</a> · <a href="0003-8k-deep-dive.html">下一课：8-K 事件解读 →</a>
+</div>
+
+<h1>二手车行业核心财务指标<br><small style="font-size:1rem;color:#666;">从 10-K/10-Q 里看什么、为什么</small></h1>
+
+<p>
+  一份 10-K 里有几百个财务指标，但竞品监控不需要看全部。对于二手车行业，真正重要的只有十几个。<strong>关键是知道每个指标在二手车这个行业里意味着什么</strong>——这在任何一本财务教材里都不会写。
+</p>
+
+<h2>第一优先级：收入结构</h2>
+
+<div class="sidenote">
+  Carvana 2026Q1: Retail 收入 $5.86B，Wholesale 收入 $470M，Other $92M
+</div>
+
+<p>
+  二手车公司的收入不是"卖一辆车收一笔钱"那么简单。关键问题是：<strong>钱从哪里赚的？</strong>
+</p>
+
+<table>
+  <tr><th>收入类型</th><th>含义</th><th>战略意义</th></tr>
+  <tr><td><strong>零售收入</strong> (Retail Revenue)</td><td>C 端卖车给个人消费者</td><td>核心业务，看增速和 ASP（均价）</td></tr>
+  <tr><td><strong>批发收入</strong> (Wholesale Revenue)</td><td>B 端拍卖/批售给经销商</td><td>卖不掉的车拿去批发——批发占比上升可能是零售端出了库存问题</td></tr>
+  <tr><td><strong>金融收入</strong> (Finance/Other Revenue)</td><td>贷款服务费、保险、延保等</td><td>利润率的隐藏来源；看到这块增长快不一定是好事（可能意味着贷款质量下降）</td></tr>
+</table>
+
+<div class="takeaway">
+  看收入不光看总数字，要看结构。批发收入占比突然上升，意味着零售车卖不动了。
+</div>
+
+<h2>第二优先级：盈利能力——二手车行业看两样就够了</h2>
+
+<h3>毛利率（Gross Margin）是圣杯</h3>
+
+<p>
+  <strong>二手车是低毛利的生意。</strong>不同于 SaaS 公司 70%+ 的毛利率，二手车公司的毛利率通常在 15%-20%。为什么毛利率最值得盯？
+</p>
+
+<ul>
+  <li><strong>毛利率反映的是每辆车的买卖差价</strong>（GPU = Gross Profit Per Unit，单车毛利）</li>
+  <li>毛利率的变动比净利润更能说明问题——净利润可能因为一次性费用失真</li>
+  <li><strong>毛利率持续下滑</strong> = 采购成本上升 + 卖价上不去 + 库存积压降价的恶性循环</li>
+</ul>
+
+<div class="real-data">
+  <strong>真实数据：</strong>Carvana 2026Q1 Gross Profit = $1.27B，Revenue = $6.43B<br>
+  → Gross Margin = 1.27 ÷ 6.43 = <strong>19.8%</strong><br>
+  对比：传统经销商 Carmax 的毛利率通常在 12-14%（因为 Carmax 主打"一口价不还价"，利润空间更低但周转更快）
+</div>
+
+<h3>SG&A 占收入比</h3>
+
+<p>
+  SG&A（销售、管理、行政费用）是二手车公司最大的费用项。为什么 SG&A/收入 比率比净利润率更有信息量？
+</p>
+
+<ul>
+  <li>SG&A 里藏着广告投放、门店运营、人员工资</li>
+  <li><strong>SG&A/收入 比率下降</strong> = 规模效应在起作用，每多卖一辆车的固定成本在摊薄</li>
+  <li><strong>SG&A/收入 比率上升 + 收入增长</strong> = 公司在疯狂烧钱换增长，要问一句"这个增长可持续吗"</li>
+</ul>
+
+<div class="real-data">
+  <strong>真实数据：</strong>Carvana 2026Q1 SG&A = $690M，Revenue = $6.43B<br>
+  → SG&A/Revenue = <strong>10.7%</strong><br>
+  这个比率在 2024 年是 ~12%，说明 Carvana 的运营效率在改善。
+</div>
+
+<h2>第三优先级：资产负债表——二手车公司最怕什么</h2>
+
+<p>
+  二手车公司的命门在资产负债表上，不在利润表上。
+</p>
+
+<table>
+  <tr><th>指标</th><th>为什么重要</th><th>危险信号</th></tr>
+  <tr><td><strong>现金</strong> (Cash)</td><td>二手车是重资金行业，买车需要大量现金</td><td>现金 / 季度收入 < 0.5 → 流动性紧张</td></tr>
+  <tr><td><strong>长期债务</strong> (Long Term Debt)</td><td>二手车公司靠借钱采购库存</td><td>债务增速超过收入增速 → 靠借新还旧</td></tr>
+  <tr><td><strong>库存</strong> (Inventory)</td><td>库存就是车——车放久了会贬值（和 iPhone 不一样！）</td><td>库存天数突然上升 → 车卖不掉，接下来要降价促销</td></tr>
+</table>
+
+<blockquote>
+  <strong>二手车行业铁律：</strong>一辆车在库存里每多放一天，就贬值一点点。这也是为什么 Carmax 宁可毛利率低也要追求高周转——库存周转速度比单台利润更重要。
+</blockquote>
+
+<div class="real-data">
+  <strong>真实数据：</strong>Carvana 2026Q1 Cash = $2.41B，Total Assets = $13.77B，Long Term Debt = $4.92B（FY2025数据）<br>
+  现金/季度收入 = 2.41 ÷ 6.43 = <strong>0.37</strong> → 这个比例不算危险（车辆采购的付款节奏和卖车节奏不完全同步），但值得持续关注。
+</div>
+
+<h2>一个简洁的指标卡（你以后看到这个表就够了）</h2>
+
+<p>每次出 10-Q，快速扫这张表：</p>
+
+<table>
+  <tr><th>指标</th><th>看什么</th><th>怎么判</th></tr>
+  <tr><td>收入</td><td>YoY 增速</td><td>加速增长 = 好；减速 = 要深挖原因</td></tr>
+  <tr><td>毛利率</td><td>绝对值 + 趋势</td><td>二手车行业 15-20% 正常；连续下降 = ⚠️</td></tr>
+  <tr><td>SG&A/收入</td><td>趋势</td><td>下降 = 运营效率提升；上升 = 烧钱或扩张</td></tr>
+  <tr><td>净利润</td><td>盈亏状态</td><td>正 = 健康；但一次性的盈利/亏损要排除</td></tr>
+  <tr><td>现金/季度收入</td><td>比值</td><td>< 0.3 = 危险；> 0.5 = 安全</td></tr>
+  <tr><td>债务 YoY</td><td>增速</td><td>债务增速 < 收入增速 = 健康</td></tr>
+</table>
+
+<hr>
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<h3>Q1: 毛利率（Gross Margin）在二手车行业为什么比净利润更重要？</h3>
+<p><input type="text" id="q1" placeholder="用一两句话回答" style="width:100%"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>毛利率反映的是每辆车的买卖差价（核心业务能力），不受一次性费用、资本结构、税收等因素干扰。</strong>净利润可能因为一笔债务重组收益而"看起来不错"但核心业务在恶化，毛利率不会撒谎。对二手车这种低毛利行业，毛利率变动 1-2 个百分点就值得开会讨论。</p>
+  </details>
+</div>
+
+<h3>Q2: 一家二手车公司的批发收入（Wholesale）占比突然从 5% 升到 15%，可能是什么信号？</h3>
+<p><input type="text" id="q2" placeholder="用一两句话回答" style="width:100%"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>可能是零售端出了问题——车卖不掉了，只能批发出清。</strong>批发价远低于零售价，批发占比上升意味着：① 库存管理出了问题（收了太多不好卖的车）；② 市场需求疲软；③ 公司可能在打折清仓，这会导致后续毛利率进一步下滑。一句话：<strong>批发收入占比上升不是好事。</strong></p>
+  </details>
+</div>
+
+<h3>Q3: 为什么二手车公司的"库存周转"比一般零售公司更重要？</h3>
+<p><input type="text" id="q3" placeholder="用一两句话回答" style="width:100%"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>因为二手车会贬值。</strong>一辆车在库存里放 60 天和放 30 天，价值不一样——不像可口可乐放在仓库里不会变质。而且二手车价格对市场供需非常敏感，库存积压 + 市场转冷 = 大幅降价 = 毛利率暴跌。Carmax 的商业模式（一口价+快速周转）就是为了解决这个结构性矛盾。</p>
+  </details>
+</div>
+
+</div>
+
+<div class="next">
+  <strong>下一课预览：</strong> <a href="0003-8k-deep-dive.html">Lesson 0003 — 8-K 事件深度解读</a>：什么事件值得"往上汇报"，什么只是噪音<br>
+  <strong>推荐阅读：</strong>找一份 Carvana 最新的 10-Q（<a href="https://investors.carvana.com/financial-reports/quarterly-results">Carvana IR 页面</a>），对照上面的指标卡自己算一遍
+</div>
+
+<hr style="margin-top:3rem;">
+<p style="font-size:0.85rem;color:#888;">
+  有任何不清楚的问。<em>下一课是整个系列里最重要的——8-K 事件的判断力，决定了"收到一条推送后，是忽略还是往上汇报"。</em>
+</p>
+
+</body>
+</html>

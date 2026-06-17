@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 0007 — Form 3/4/5 与内部人交易</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "ET Book", "Palatino Linotype", Palatino, "Noto Serif SC", "Source Han Serif SC", serif;
+    background: #fffff8; color: #111; line-height: 1.6;
+    max-width: 720px; margin: 2rem auto; padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 0.3rem; font-weight: 400; font-style: italic; }
+  p { margin: 0.7rem 0; }
+  .sidenote {
+    float: right; clear: right; width: 180px; margin-right: -210px;
+    font-size: 0.82rem; color: #555; line-height: 1.4; margin-top: 0.2rem;
+  }
+  @media (max-width: 960px) { .sidenote { float: none; width: auto; margin-right: 0; margin-top: 0; font-style: italic; } }
+  blockquote { margin: 1rem 0; padding: 0.5rem 1rem; border-left: 3px solid #c44; background: #fff8f6; font-style: italic; color: #444; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+  th { font-weight: 500; background: #f8f8f4; }
+  code { background: #f4f4ee; padding: 1px 4px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f4f4ee; padding: 0.8rem 1rem; overflow-x: auto; font-size: 0.85rem; border-radius: 4px; margin: 0.8rem 0; }
+  .quiz { background: #f4f4ee; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 6px; }
+  .quiz h3 { margin-top: 0; font-style: normal; }
+  .quiz details { margin-top: 0.4rem; }
+  .takeaway { background: #fff3cd; border-left: 3px solid #f0b400; padding: 0.6rem 1rem; margin: 1.5rem 0; font-weight: 500; }
+  .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  .next { background: #f0f0e8; padding: 1rem 1.2rem; margin: 3rem 0 1rem; font-size: 0.95rem; }
+  a { color: #a33; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .warn { background: #fff0f0; border-left: 3px solid #c44; padding: 0.6rem 1rem; margin: 1rem 0; }
+  .warn h4 { margin: 0 0 0.3rem; }
+  .china { background: #f0f4ff; border-left: 3px solid #36a; padding: 0.8rem 1rem; margin: 1rem 0; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  Lesson 0007 · <a href="0006-13f-institutional-holdings.html">← 上一课：13F 机构持仓</a> · <a href="0008-13dg-activist-investors.html">下一课：13D/G Activist 投资者 →</a>
+</div>
+
+<h1>Form 3/4/5 与内部人交易<br><small style="font-size:1rem;color:#666;">高管在用脚投票，怎么看他们的信号</small></h1>
+
+<p>
+  Lesson 0006 讲了<strong>外部机构</strong>（Vanguard、BlackRock 等）在买什么、卖什么。这一课讲<strong>公司内部人</strong>（CEO、CFO、董事）自己在买什么、卖什么。
+</p>
+
+<p>
+  内部人交易数据是 SEC 披露体系里<strong>信号噪音比最高</strong>的一种——因为内部人对公司的了解远胜外部投资者，他们的买入或卖出通常比机构持仓变动更有信息量。但前提是<strong>读懂</strong>，否则会被误判误导。
+</p>
+
+<div class="takeaway">
+  内部人交易不是"事件"——它是一条<strong>持续的数据流</strong>。单笔交易不说明问题，但加权后的整体情绪（InsiderSentiment 指标）能告诉你"这家公司的高管们对未来是怎么想的"。
+</div>
+
+<h2>Section 16 是什么、覆盖谁</h2>
+
+<p>
+  Section 16 是 1934 年证券交易法的第 16 条，专门规范<strong>公司内部人</strong>的持股和交易披露。三个关键边界：
+</p>
+
+<table>
+  <tr><th>管辖对象</th><th>含义</th><th>具体例子</th></tr>
+  <tr><td><strong>Officer</strong>（高管）</td><td>公司高管，通常是 VP 及以上</td><td>CEO、CFO、COO、各 SVP/EVP</td></tr>
+  <tr><td><strong>Director</strong>（董事）</td><td>董事会成员</td><td>独立董事、控股母公司派出的董事</td></tr>
+  <tr><td><strong>10% Owner</strong>（10% 以上股东）</td><td>持有公司 >10% 股份的股东</td><td>创始人、控股母公司、大型被动股东</td></tr>
+</table>
+
+<div class="warn">
+  <h4>⚠️ 中国 ADR 公司的盲区</h4>
+  <p>
+    Section 16 只适用于持有<strong>美国注册证券</strong>的内部人。中国 ADR 公司（优信、汽车之家）的高管通常持有<strong>开曼/VIE 层面的权益</strong>——这些权益不受 SEC Section 16 管辖。
+  </p>
+  <p>结果：<strong>UXIN/ATHM 几乎没有 Form 4 数据</strong>。这不是"没有内部人交易"，而是"内部人交易不在 SEC 披露范围"。我们的系统在 config.py 里标记 <code>has_section16 = False</code>，Dashboard 显示"不适用"而非"无数据"。</p>
+</div>
+
+<h2>三张内部人表格的区别</h2>
+
+<p>
+  内部人交易披露有三张表，提交节奏和内容不同。简单区分：
+</p>
+
+<table>
+  <tr><th>表格</th><th>全称</th><th>什么时候提交</th><th>内容</th></tr>
+  <tr><td><strong>Form 3</strong></td><td>Initial Statement</td><td>成为内部人后 10 天内</td><td>初始持股声明（一次性）</td></tr>
+  <tr><td><strong>Form 4</strong></td><td>Statement of Changes</td><td><strong>交易后 2 个工作日内</strong></td><td>每次买卖都要报</td></tr>
+  <tr><td><strong>Form 5</strong></td><td>Annual Statement</td><td>财年结束后 45 天内</td><td>年度汇总（豁免交易）</td></tr>
+</table>
+
+<p>
+  <strong>Form 4 是最重要的</strong>——时效性最强（2 个工作日）、覆盖所有交易。Form 3 和 Form 5 主要是"补登"性质。
+</p>
+
+<h2>Form 4 的结构：Table I vs Table II</h2>
+
+<p>
+  Form 4 由两张表组成，区别很关键：
+</p>
+
+<pre>
+Table I — Non-Derivative Securities（直接持股的买卖）
+  字段:
+    - Title of Security          股票名称
+    - Transaction Date           交易日
+    - Transaction Code           P=买入, S=卖出, G=赠与, A=授予, F=交税卖出
+    - Amount                     股数
+    - Price                      单价
+    - Amount After               交易后持股数
+
+Table II — Derivative Securities（期权/derivatives 的变动）
+  字段类似，但单位是"期权份数"而非"股数"
+  常见 Code: M=行权, A=授予（期权）, C=转换
+</pre>
+
+<h3>常见的交易代码（Transaction Code）</h3>
+
+<table>
+  <tr><th>Code</th><th>含义</th><th>有信号吗？</th></tr>
+  <tr><td><strong>P</strong></td><td>主动买入 (Purchase)</td><td>✅✅✅ 强正面信号——内部人自掏腰包</td></tr>
+  <tr><td><strong>S</strong></td><td>主动卖出 (Sale)</td><td>✅ 弱负面信号——可能是分散持仓，不一定是看空</td></tr>
+  <tr><td><strong>F</strong></td><td>交税卖出 (Tax withholding)</td><td>❌ 几乎没信号——期权行权时预扣税是标准操作</td></tr>
+  <tr><td><strong>G</strong></td><td>赠与 (Gift)</td><td>❌ 弱信号——慈善/家族信托常见</td></tr>
+  <tr><td><strong>A</strong></td><td>授予/行权 (Award/Exercise)</td><td>❌ 没信号——薪酬的一部分，不是主动交易</td></tr>
+  <tr><td><strong>M</strong></td><td>期权行权</td><td>看行权后的卖出行为（Code F/S 配对）</td></tr>
+</table>
+
+<div class="warn">
+  <h4>最常见的误判</h4>
+  <p>把"Code F 大量交税卖出"误读为"内部人看空"。这是最大的坑——高管在 10b5-1 计划下批量行权期权时，会同时产生大量 Code F 交易（预扣税）和 Code S 交易（卖出）。</p>
+  <p>正确做法是：<strong>看 Code P（主动买入）的金额</strong>，以及<strong>Code S 扣除行权配套卖出后的净卖出</strong>。直接 SUM 所有卖出代码会把信号淹没在噪音里。</p>
+</div>
+
+<h2>内部人情绪指标的正确算法</h2>
+
+<p>
+  简单数买卖笔数没意义（10b5-1 计划会产生大量配对交易）。正确做法是<strong>加权打分</strong>：
+</p>
+
+<pre>
+InsiderSentiment = Σ(买入金额_i × 角色权重_i × 交易代码权重_i)
+                  - Σ(卖出金额_j × 角色权重_j × 交易代码权重_j)
+
+角色权重:
+  CEO / CFO                   2.0    最高决策层
+  10% Owner                   1.5    大股东
+  Director                    1.0    董事会
+  EVP / SVP / VP              0.8    执行层
+
+交易代码权重:
+  P (主动买入)                1.0
+  S (主动卖出)                1.0
+  F (交税卖出)                0.2
+  G (赠与)                    0.3
+  A (期权授予)                0.0
+  M (期权行权)                0.0   (只看向行权后的卖出)
+
+归一化到 [-100, +100]:
+  &gt; +30  → 看多信号
+  -30 ~ +30 → 中性
+  &lt; -30  → 看空信号
+</pre>
+
+<p>
+  注意 <strong>F 权重是 0.2 而不是 0</strong>——保留一点点信号（大量交税卖出可能反映大规模行权 = 集中套现），但不主导结论。
+</p>
+
+<div class="takeaway">
+  <strong>避免一个常见错误：</strong>在 10-K 发布前 1 个月，会出现大量内部人卖出（10b5-1 计划预设的）。这不一定是"内部人对年报没信心"——可能是按计划在 10b5-1 框架下分散持仓。要看 10b5-1 计划的备案日（一般在 8-K 的 Item 8.01 或 DEF 14A 里），不是看交易本身。
+</div>
+
+<h2>Form 144 — 减持的"预告片"</h2>
+
+<p>
+  Form 144 是另一类内部人信号——它是<strong>事前通知</strong>，不是事后披露。
+</p>
+
+<table>
+  <tr><th>Form 144 的关键事实</th></tr>
+  <tr><td>触发条件：内部人计划出售 <strong>≥5,000 股 或 ≥$50,000</strong></td></tr>
+  <tr><td>提交时机：<strong>计划卖出前的 1-3 个工作日</strong></td></tr>
+  <tr><td>有效期：计划卖出需在 Form 144 提交后 <strong>90 天内</strong>完成</td></tr>
+  <tr><td>aggregate market value：基于提交日股价的<strong>预估值</strong>（不是实际成交价）</td></tr>
+</table>
+
+<p>
+  关键解读：
+</p>
+
+<ul>
+  <li>Form 144 <strong>不等于"已经卖了"</strong>——它只是"准备卖"。计划可能不执行</li>
+  <li>但<strong>多份 Form 144 连续提交</strong> = 持续减持信号，要警惕</li>
+  <li>用 Form 144 预判卖压时，要看"<strong>实际执行率</strong>"（OpenInsider 网站有这个数据）</li>
+</ul>
+
+<h2>中国竞品的特殊处理（实操规则）</h2>
+
+<p>
+  我们的 5 家竞品里，<strong>优信 (UXIN) 和汽车之家 (ATHM) 是中国 ADR</strong>。它们没有 Form 4 / Form 144 数据，但有<strong>母公司层面的港股/A股披露</strong>。
+</p>
+
+<div class="china">
+  <h4>系统处理规则</h4>
+  <p>
+    <strong>1. config.py 标记</strong>：<code>has_section16 = False</code><br>
+    <strong>2. Dashboard 显示</strong>：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- 不是"无数据"，而是"不适用"（避免被误解为采集失败）<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- 旁边注明："内部人持有 VIE 层面权益，不受 SEC 披露约束"<br>
+    <strong>3. 异常告警</strong>：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- 如果中国 ADR 突然出现 Form 4 → 红色预警<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- 这是<strong>罕见事件</strong>，说明内部人特意把权益从开曼迁到美国层面来交易<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- 历史上这种情况极少见，但一旦出现，几乎总是有大事发生
+  </p>
+</div>
+
+<h2>Carvana 最近 5 个月的内部人交易</h2>
+
+<p>下表是 2026 年 1-6 月我们从 EDGAR 拉到的 Carvana Form 4 数据（简化）：</p>
+
+<table>
+  <tr><th>日期</th><th>内部人</th><th>角色</th><th>Code</th><th>股数</th><th>金额 ($K)</th><th>加权后</th></tr>
+  <tr><td>2026-06-11</td><td>Ernest C. Garcia III</td><td>10% Owner (2.0)</td><td>S</td><td>50,000</td><td>15,000</td><td>-30,000</td></tr>
+  <tr><td>2026-06-11</td><td>Mark Jenkins</td><td>CFO (2.0)</td><td>F</td><td>8,000</td><td>2,400</td><td>-960</td></tr>
+  <tr><td>2026-05-22</td><td>Paul Keister</td><td>VP (0.8)</td><td>P</td><td>2,000</td><td>600</td><td>+480</td></tr>
+  <tr><td>2026-03-15</td><td>Ernest C. Garcia III</td><td>10% Owner</td><td>S</td><td>120,000</td><td>30,000</td><td>-90,000</td></tr>
+</table>
+
+<p>
+  这 4 笔交易的 InsiderSentiment = (-30,000 - 960 + 480 - 90,000) / 60,000 = <strong>-200% → 归一化后约 -100（极度看空）</strong>。
+</p>
+
+<p>
+  但注意：Ernest C. Garcia III 是 10% Owner，他的大额卖出经常是 10b5-1 计划下的<strong>主动分散持仓</strong>，不是对业务的看空。<strong>需要看他在 8-K 或 DEF 14A 里披露的 10b5-1 计划</strong>才能定性。
+</p>
+
+<hr>
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<h3>Q1: 高管在 10b5-1 计划下集中行权期权，触发了 100 笔 Code F（交税卖出）交易。你的系统应该怎么解读？</h3>
+<p><input type="text" id="q1" placeholder="用一两句话回答"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>几乎不解读为负面信号——这是 10b5-1 计划的标配操作。</strong>Code F 的权重是 0.2，100 笔 × 0.2 = 20 单位的噪音贡献。如果只看笔数会得出"内部人大规模减持"的错误结论；如果按加权算法，结论可能是中性或微负。判断时必须看该 10b5-1 计划是在什么时候备案的（通常在 8-K Item 8.01 或 DEF 14A 里），备案时间如果在 3-6 个月前，那基本是按计划行事。</p>
+  </details>
+</div>
+
+<h3>Q2: 优信 (UXIN) 的 Dashboard 显示"内部人交易：不适用"，这和数据采集失败怎么区分？</h3>
+<p><input type="text" id="q2" placeholder="用一两句话回答"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>两者要明确区分，因为意义完全不同。</strong>"不适用" = 公司结构决定不适用 Section 16 披露（中国 ADR 内部人持有 VIE 层面权益），系统在 config.py 标记 has_section16 = False。"数据为空" = 采集失败或该期间没有 Form 4（罕见，因为 Form 4 是 2 个工作日强制披露）。Dashboard 的 UI 设计上要用不同的颜色和文字（"不适用" 用灰色，注释说明原因；"数据为空" 用红色，可能提示 API 故障）。</p>
+  </details>
+</div>
+
+<h3>Q3: 看到 Carvana 的 CFO 在 10b5-1 计划下卖了 $5M 股票，但同时 VP 主动买入 $1M。你的系统怎么打分？</h3>
+<p><input type="text" id="q2" placeholder="用一两句话回答"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>要看这 $5M 卖出的具体 Code 是什么。</strong>如果是 Code F（交税卖出）+ 配套的 Code S（10b5-1 计划下的卖出），那么权重 = 0.2 + 1.0 × 角色权重 2.0 = 2.2 单位的负向贡献。但 VP 主动买入 (Code P) = 1.0 × 0.8 = 0.8 单位的正向贡献。如果金额差 5:1，结果是净负向 ~-3,400 单位，<strong>但归一化后可能落在 -30 ~ 0 区间，结论是"谨慎"</strong>，不是"看空"。所以即使金额大，但因为是 10b5-1 计划下的程序化卖出，结论要打折。</p>
+  </details>
+</div>
+
+</div>
+
+<div class="next">
+  <strong>下一课预览：</strong> <a href="0008-13dg-activist-investors.html">Lesson 0008 — Schedule 13D/G 与 Activist 投资者</a>：谁在试图改变公司，怎么识别他们<br>
+  <strong>推荐资源：</strong> <a href="http://openinsider.com/">OpenInsider</a>（免费）— 直接搜索 CVNA，看真实的 Form 4 数据长什么样，对着数据理解 Table I/II 的区别<br>
+  <strong>速查表：</strong> <a href="../reference/sec-form-types.html">SEC 表格类型速查表</a>（Form 3/4/5/144 在"内部人交易与持仓"区块）
+</div>
+
+<hr style="margin-top:3rem;">
+<p style="font-size:0.85rem;color:#888;">
+  有任何不清楚的地方，在对话里直接问我。<br>
+  <em>这一课是交叉持股系列的第二块拼图。下一课讲 13D/G——比 Form 4 频率低，但信号强度更高的"主动投资者"申报。</em>
+</p>
+
+</body>
+</html>

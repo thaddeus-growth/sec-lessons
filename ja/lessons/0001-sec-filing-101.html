@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 0001 — SEC Filing 101：3 つの最重要フォーム</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "ET Book", "Palatino Linotype", Palatino, "Noto Serif SC", "Source Han Serif SC", serif;
+    background: #fffff8;
+    color: #111;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 0.3rem; font-weight: 400; font-style: italic; }
+  p { margin: 0.7rem 0; }
+  .sidenote {
+    float: right; clear: right; width: 180px; margin-right: -210px;
+    font-size: 0.82rem; color: #555; line-height: 1.4;
+    margin-top: 0.2rem;
+  }
+  @media (max-width: 960px) {
+    .sidenote { float: none; width: auto; margin-right: 0; margin-top: 0; font-style: italic; }
+  }
+  blockquote {
+    margin: 1rem 0; padding: 0.5rem 1rem;
+    border-left: 3px solid #c44; background: #fff8f6;
+    font-style: italic; color: #444;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
+  th { font-weight: 500; background: #f8f8f4; }
+  .quiz { background: #f4f4ee; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 6px; }
+  .quiz h3 { margin-top: 0; font-style: normal; }
+  .quiz p { margin: 0.5rem 0; }
+  .quiz input[type="text"] { width: 100%; padding: 0.4rem 0.6rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+  .quiz .reveal { margin-top: 0.8rem; }
+  .quiz .reveal details { margin-top: 0.4rem; }
+  .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  .next { background: #f0f0e8; padding: 1rem 1.2rem; margin: 3rem 0 1rem; font-size: 0.95rem; }
+  a { color: #a33; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .takeaway { background: #fff3cd; border-left: 3px solid #f0b400; padding: 0.6rem 1rem; margin: 1.5rem 0; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  Lesson 0001 · <a href="../reference/sec-form-types.html">参考：SEC フォーム種別 早見表</a> · <a href="0002-financial-statements.html">次のレッスン：3 つの財務諸表を読み解く →</a>
+</div>
+
+<h1>SEC Filing 101<br><small style="font-size:1rem;color:#666;">3 つのフォームで理解する米国上場企業の開示体系</small></h1>
+
+<p>
+  米国のすべての上場企業は、SEC（米国証券取引委員会）に対し定期的に書類（filing）を提出し、EDGAR システムを通じて全世界に公開することが義務付けられています。
+  この開示体系は、世界で最も成熟し、最も透明性の高い資本市場インフラの一つです。
+</p>
+
+<p>
+  戦略的投資家にとって、<strong>SEC filing は「無料で・法定で・構造化された競合インテリジェンス」</strong>です。ニュースより正確で、サードパーティの調査レポートより客観的で、噂話より信頼できます。
+  しかも、誰でもアクセスでき、有料登録も不要です。
+</p>
+
+<div class="takeaway">
+  核心的な認識：SEC filing は「コンプライアンスの負担」ではなく、競合他社が定期的に公開せざるを得ない戦略インテリジェンスです。
+</div>
+
+<h2>3 つのコア・フォーム</h2>
+
+<p>
+  SEC には数百種類のフォームが存在しますが、競合モニタリングで必要なのは 3 つだけです。
+</p>
+
+<table>
+  <tr>
+    <th>フォーム</th>
+    <th>頻度</th>
+    <th>内容</th>
+    <th>競合モニタリング上の価値</th>
+  </tr>
+  <tr>
+    <td><strong>10-K</strong><br><span style="font-size:0.85rem;color:#888">年次報告書</span></td>
+    <td>年 1 回<br>（会計年度終了後 60〜90 日以内）</td>
+    <td>最も包括的な年次開示：監査済財務諸表、事業内容、Risk Factors、MD&amp;A（経営陣による分析・検討）</td>
+    <td>⭐⭐⭐⭐⭐<br>「ある企業の全体像」を把握するための最も完全なスナップショット</td>
+  </tr>
+  <tr>
+    <td><strong>10-Q</strong><br><span style="font-size:0.85rem;color:#888">四半期報告書</span></td>
+    <td>四半期ごと<br>（四半期終了後 40〜45 日以内）</td>
+    <td>四半期財務データ（未監査） + 当期間の重要な変更点</td>
+    <td>⭐⭐⭐⭐⭐<br>業績トレンドの追跡、転換点の発見</td>
+  </tr>
+  <tr>
+    <td><strong>8-K</strong><br><span style="font-size:0.85rem;color:#888">臨時報告書（重要事象報告）</span></td>
+    <td>不定期<br>（事象発生後 4 営業日以内）</td>
+    <td>「投資家にとって重要」なあらゆる事象：役員異動、買収、破綻、業務提携、業績発表など</td>
+    <td>⭐⭐⭐⭐⭐<br>競合他社の戦略的動きを最も早く察知できるチャネル</td>
+  </tr>
+</table>
+
+<div class="sidenote">
+  Carvana の会計年度は暦年と一致（12 月 31 日締め）するため、10-K は毎年 2 月、10-Q は 4 月・7 月・10 月に提出されます。
+</div>
+
+<h2>10-K：企業の「年次健康診断書」</h2>
+
+<p>
+  <strong>10-K は米国上場企業にとって最も重要な書類です。</strong>これは法的文書であり、内容のすべてが法的責任を負います（虚偽記載は SEC の処罰や株主代表訴訟の対象となります）。
+</p>
+
+<p>10-K の構成は標準化されており、主に以下のパートで構成されています。</p>
+
+<table>
+  <tr><th>パート</th><th>日本語での意味</th><th>競合モニタリング上の重点</th></tr>
+  <tr><td>Item 1. Business</td><td>事業内容の記述</td><td>ビジネスモデル、収益源、競合状況に関する自社評価</td></tr>
+  <tr><td>Item 1A. Risk Factors</td><td>リスク要因</td><td>⚠️ 企業自らが認めるリスク——最も価値のあるパート</td></tr>
+  <tr><td>Item 7. MD&amp;A</td><td>経営者による分析と検討</td><td>業績に対する経営陣の説明、トレンド判断、将来見通し</td></tr>
+  <tr><td>Item 8. Financial Statements</td><td>監査済財務諸表</td><td>収益、利益、資産、負債、キャッシュ・フロー（最も信頼性の高いデータ）</td></tr>
+  <tr><td>Item 15. Exhibits</td><td>添付書類</td><td>契約書、買収契約書などの原文資料</td></tr>
+</table>
+
+<blockquote>
+  <strong>戦略的投資家のための読み順：</strong><br>
+  Item 1A（リスク）→ Item 7（経営陣の見解）→ Item 8（数字が語ること）→ Item 1（ビジネスモデルが依然として成立しているか）
+</blockquote>
+
+<h2>10-Q：四半期の「健康診断サマリー」</h2>
+
+<p>
+  10-Q は「10-K の簡易版 + 直近期間のデータ」と理解できます。データは未監査ですが、企業は依然として法的責任を負います。主な価値は次の通りです。
+</p>
+
+<ul>
+  <li><strong>トレンドの追跡</strong>：4 四半期の 10-Q を並べれば、1 年間の企業変化の軌跡が見えてきます</li>
+  <li><strong>転換点の発見</strong>：売上の伸びは加速しているか、減速しているか？ 粗利率は改善しているか、悪化しているか？</li>
+  <li><strong>10-K より速い</strong>：10-K は年次監査を待つ必要がありますが、10-Q は四半期終了後 40 日以内に出てきます</li>
+</ul>
+
+<h2>8-K：企業の「ニュース速報」</h2>
+
+<p>
+  8-K は最も特殊なフォームです。<strong>不定期提出、事象ドリブン、速報性最強</strong>。法律により、企業は「重要な事象」が発生してから 4 営業日以内に 8-K を提出しなければなりません。
+</p>
+
+<p>SEC はあらゆる「重要な事象」を <strong>Item 番号</strong> としてコード化しており、1.01 から 9.01 まであります。これらの Item 番号が何を意味するかを知ることは、競合モニタリングの中核スキルです（次のレッスンで詳しく扱います）。</p>
+
+<p>ここでは最も重要な Item だけ押さえておいてください。</p>
+
+<table>
+  <tr><th>Item</th><th>事象</th><th>競合モニタリング上の意味</th></tr>
+  <tr><td>2.02</td><td>業績発表</td><td>10-Q が出る前に重要数字を確認できる。時には「事前予告（pre-announcement）」として、市場コンセンサスとのかい離を示すシグナルになる</td></tr>
+  <tr><td>5.02</td><td>役員・取締役の異動</td><td>CFO の辞任？CEO の交代？社内で何か起きているシグナルかもしれない</td></tr>
+  <tr><td>1.01</td><td>重要な契約の締結</td><td>大口契約の獲得？サプライヤーの変更？戦略提携？</td></tr>
+  <tr><td>2.01</td><td>重要な資産の買収・売却</td><td>会社の買収、事業売却——戦略の方向性が変わる</td></tr>
+</table>
+
+<div class="takeaway">
+  小テスト：もし 1 種類の SEC フォームしかモニタリングできないとしたら、8-K を選んでください。10-K と 10-Q ではカバーされない「想定外のこと」をすべて拾えるからです。
+</div>
+
+<h2>具体例：Carvana の直近 5 ヶ月</h2>
+
+<p>以下は Carvana（CVNA）が 2026 年に提出した filing のタイムラインです（弊社システムから取得した実データ）。</p>
+
+<table>
+  <tr><th>日付</th><th>フォーム</th><th>意味</th></tr>
+  <tr><td>2026-06-15</td><td>Form 144</td><td>インサイダーの売却予定通知（過度に心配する必要はない。計画的である可能性が高い）</td></tr>
+  <tr><td>2026-06-11</td><td>Form 4</td><td>インサイダーの実際の売買取引（売買株数・価格を必ず開示）</td></tr>
+  <tr><td>2026-05-06</td><td>8-K</td><td>⚠️ Items 5.02（役員異動）、5.03（定款変更）、5.07（株主投票）</td></tr>
+  <tr><td>2026-04-29</td><td>10-Q</td><td>📊 第 1 四半期決算（Revenue $6.4B, Net Income $250M）</td></tr>
+  <tr><td>2026-04-29</td><td>8-K</td><td>📊 Items 2.02（業績発表）、9.01（添付書類）</td></tr>
+  <tr><td>2026-02-18</td><td>10-K</td><td>📊 2025 年次報告書</td></tr>
+</table>
+
+<p>
+  このタイムラインの中で、5 月 6 日の 8-K が最も注目に値します。役員異動 + 定款変更 + 株主投票という 3 つのシグナルが同時に出ています。
+  一方、6 月の Form 144 と Form 4 はインサイダー取引ですが、Carvana のような規模の企業では日常的な出来事です。
+</p>
+
+<hr>
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<h3>Q1: 競合企業の「自社が認めるリスク」を把握したい場合、どのパートを見るべきでしょうか？</h3>
+<p><input type="text" id="q1" placeholder="解答を入力（フォーム + パート）"></p>
+<div class="reveal">
+  <details>
+    <summary>答えを見る</summary>
+    <p><strong>10-K の Item 1A（Risk Factors）</strong></p>
+    <p>これは企業が自ら列挙するリスク一覧であり、「事業に重大な悪影響を及ぼす可能性のあるあらゆるリスク」の開示が義務付けられています。企業の法的声明であるため、相対的に客観的です。中古車会社の典型的なリスク開示には、車両品質リスク、ローン債務不履行リスク、マクロ経済が中古車需要に与える影響、規制変更などがあります。</p>
+  </details>
+</div>
+
+<h3>Q2: 「事象発生後 4 営業日以内」に開示が義務付けられているのはどのフォームですか？</h3>
+<p><input type="text" id="q2" placeholder="解答を入力（フォームコード）"></p>
+<div class="reveal">
+  <details>
+    <summary>答えを見る</summary>
+    <p><strong>8-K</strong></p>
+    <p>8-K の特異性は、それが「事象ドリブン」であり、10-K・10-Q のような固定周期ではない点です。競合他社が突然 8-K を提出したのを見かけたら、すぐに中身を確認してください——注目すべき変化が起きている可能性が極めて高いです。</p>
+  </details>
+</div>
+
+<h3>Q3: 10-K と 10-Q の財務データでは、どちらが監査を受けていますか？</h3>
+<p><input type="text" id="q3" placeholder="解答を入力"></p>
+<div class="reveal">
+  <details>
+    <summary>答えを見る</summary>
+    <p><strong>10-K のデータは独立した監査を受けていますが、10-Q のデータは監査されていません。</strong></p>
+    <p>監査とは、外部の会計事務所（例えば Big 4）が財務データの正確性を検証済であるということです。10-Q のデータは企業自身が報告したものであり、未監査のため、理論上は「調整」の余地があります（もっとも、企業は依然として法的責任を負います）。深い分析を行う際は、10-K のデータを基準にして 10-Q のデータを校正してください。</p>
+  </details>
+</div>
+
+</div>
+
+<div class="next">
+  <strong>次のレッスン：</strong> <a href="0002-financial-statements.html">Lesson 0002 — 10-K/10-Q から中古車業界にとって最も重要な財務指標を抽出する方法</a><br>
+  <strong>推奨文献：</strong> SEC 公式の <a href="https://www.sec.gov/files/reada10k.pdf">How to Read a 10-K</a>（英語、3 ページの PDF、15 分で読める）<br>
+  <strong>早見表：</strong> <a href="../reference/sec-form-types.html">SEC フォーム種別 早見表</a>（印刷して手元に貼っておけます）
+</div>
+
+<hr style="margin-top:3rem;">
+<p style="font-size:0.85rem;color:#888;">
+  わからないことがあれば、対話の中で直接聞いてください——私が先生です。<br>
+  <em>本シリーズの目的は、あなたを SEC の専門家にすることではなく、戦略投資部の会議で「なぜこの情報が重要か」を説明できるようにすることです。</em>
+</p>
+
+</body>
+</html>

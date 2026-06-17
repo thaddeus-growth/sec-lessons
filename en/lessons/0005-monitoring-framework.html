@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 0005 — The Competitor Monitoring Framework</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "ET Book", "Palatino Linotype", Palatino, "Noto Serif SC", serif;
+    background: #fffff8; color: #111; line-height: 1.6;
+    max-width: 720px; margin: 2rem auto; padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+  p { margin: 0.7rem 0; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+  th { font-weight: 500; background: #f8f8f4; }
+  .quiz { background: #f4f4ee; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 6px; }
+  .quiz h3 { margin-top: 0; }
+  .quiz details { margin-top: 0.4rem; }
+  .takeaway { background: #fff3cd; border-left: 3px solid #f0b400; padding: 0.6rem 1rem; margin: 1.5rem 0; font-weight: 500; }
+  .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  a { color: #a33; text-decoration: none; }
+  .card { background: #fafafa; border: 1px solid #e0e0e0; padding: 1rem 1.2rem; margin: 1rem 0; }
+  .card h3 { margin-top: 0; font-size: 1rem; }
+  .tag { display:inline-block; padding:1px 8px; border-radius:3px; font-size:0.75rem; margin-right:4px; color:#fff; }
+  .tag-core { background:#c44; }
+  .tag-legacy { background:#f0b400; color:#333; }
+  .tag-dealer { background:#4a4; }
+  .tag-china { background:#36a; }
+  .tag-traffic { background:#a36; }
+  .framework { background: #f0f4ff; border: 1px solid #ccd; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  blockquote { margin: 1rem 0; padding: 0.5rem 1rem; border-left: 3px solid #c44; background: #fff8f6; font-style: italic; color: #444; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  Lesson 0005 &middot; <a href="0004-earnings-call.html">&larr; Previous: Earnings Call</a> &middot; <a href="../reference/sec-form-types.html">Reference: SEC Forms Cheat Sheet</a>
+</div>
+
+<h1>The Competitor Monitoring Framework<br><small style="font-size:1rem;color:#666;">Why these five companies, and what to monitor for each</small></h1>
+
+<p>
+  The first four lessons covered the "tools" &mdash; what SEC filings are, how to read financial metrics, how to judge an 8-K, and how to listen to an EC. This lesson returns to the starting point: <strong>"Why are we building this system?"</strong>
+</p>
+
+<h2>A Framework: Four Layers of Competitor Monitoring</h2>
+
+<div class="framework">
+  <p><strong>Layer 1: Financial statements</strong> &rarr; tell us what is happening (<em>what</em>)<br>
+  <strong>Layer 2: Event-driven signals</strong> &rarr; tell us when something important happened (<em>when what</em>)<br>
+  <strong>Layer 3: Management signals</strong> &rarr; tell us the intent behind what is happening (<em>why</em>)<br>
+  <strong>Layer 4: Cross-company comparison</strong> &rarr; tell us what it means for us (<em>so what</em>)</p>
+</div>
+
+<p>The first three layers are what the SEC filing system can deliver; <strong>the fourth layer is where strategic analysis adds value</strong> &mdash; and it is the layer that no automated system can fully replace. The system covers the first three; you focus on the fourth.</p>
+
+<h2>The Selection Logic for the Five Competitors</h2>
+
+<p>
+  These five were not chosen at random. Each plays a different role in the framework.
+</p>
+
+<div class="card">
+  <h3><span class="tag tag-core">Core Benchmark</span> 1. Carvana (CVNA)</h3>
+  <p><strong>Why this one:</strong> Carvana is the standard-bearer for the "pure online used-car retail" model. It proved consumers will buy a used car online without a test drive. From its 2017 IPO through 2026, Carvana has lived through a full cycle &mdash; cash-burning growth &rarr; near-bankruptcy &rarr; profitability turnaround &mdash; covering nearly every strategic challenge a used-car e-commerce company can face.</p>
+  <p><strong>What to monitor:</strong> Gross margin trend (does the online economic model actually work), inventory management (where the cars come from, how they are priced), SG&amp;A efficiency (are scale benefits materializing)</p>
+  <p><strong>Key question:</strong> Is Carvana's profitability a sustainable structural improvement, or a cyclical tailwind?</p>
+</div>
+
+<div class="card">
+  <h3><span class="tag tag-legacy">Legacy Incumbent</span> 2. Carmax (KMX)</h3>
+  <p><strong>Why this one:</strong> Carmax is the largest used-car retailer in the US, founded 30 years ago, representing the "offline-first, no-haggle fixed price, fast turnover" traditional best-practice model. That is exactly the model Carvana is trying to disrupt. Conversely, Carmax is also going online &mdash; it is a case study in traditional-model transformation.</p>
+  <p><strong>What to monitor:</strong> Same-store sales growth (health of physical stores), online penetration (how fast the legacy player is transforming), inventory turnover days (the industry efficiency benchmark)</p>
+  <p><strong>Key question:</strong> Can the offline + online hybrid model optimize efficiency and cost at the same time? Or does optimizing one sacrifice the other?</p>
+</div>
+
+<div class="card">
+  <h3><span class="tag tag-dealer">Dealer Group</span> 3. AutoNation (AN)</h3>
+  <p><strong>Why this one:</strong> AutoNation is a typical large dealer group &mdash; it sells both new and used cars and runs its own financing arm. We do not monitor it to learn a model, but to observe "upstream in the value chain" &mdash; AutoNation's new-car sales and inventory reflect OEM supply cadence and end-demand.</p>
+  <p><strong>What to monitor:</strong> New-car vs used-car revenue mix (industry trend), finance revenue (profitability of auto finance), store expansion/contraction (changes in industry infrastructure)</p>
+  <p><strong>Key question:</strong> Will an oversupply of new cars crowd out the used-car market? When will used-car price declines transmit upstream?</p>
+</div>
+
+<div class="card">
+  <h3><span class="tag tag-china">Domestic Peer</span> 4. UXIN (UXIN)</h3>
+  <p><strong>Why this one:</strong> UXIN is the only Chinese used-car e-commerce company still listed in the US. Its disclosures follow SEC standards, so it is directly comparable to Carvana. UXIN's struggles (high financing costs, difficulty sourcing cars, low consumer trust) are highly representative of the structural challenges in China's used-car market.</p>
+  <p><strong>What to monitor:</strong> Revenue mix (2B vs 2C mix shift &mdash; UXIN historically relied heavily on B-side wholesale), financing capacity (can it keep raising capital), unit economics (does it actually make money on each car sold)</p>
+  <p><strong>Key question:</strong> Can "unit economics turning positive" in Chinese used-car e-commerce ever be achieved? If UXIN fails, is it a model problem or an execution problem?</p>
+</div>
+
+<div class="card">
+  <h3><span class="tag tag-traffic">Traffic Gateway</span> 5. Autohome (ATHM)</h3>
+  <p><strong>Why this one:</strong> Autohome is not a used-car e-commerce company; it is the auto industry's "traffic gateway" &mdash; consumers visit Autohome before buying to read reviews, compare prices, and check specs. We monitor it because: (i) its advertising revenue reflects the marketing budgets of the entire auto industry (OEMs and dealers are Autohome's main customers); (ii) its content-to-transaction transformation (what ByteDance's Dongchedi is doing) could, if successful, encroach on the transaction stage.</p>
+  <p><strong>What to monitor:</strong> Advertising revenue growth (barometer of industry marketing budgets), dealer member count (health of the dealer network), content-to-transaction experiments (is it extending from media into transactions)</p>
+  <p><strong>Key question:</strong> Dongchedi (ByteDance-owned) is taking share from Autohome. Can Autohome defend its position as the traffic gateway?</p>
+</div>
+
+<h2>A Signal Matrix</h2>
+
+<p>When comparing across companies, do not look at a single metric for a single company in isolation. Use this matrix for cross-validation:</p>
+
+<table>
+  <tr><th>If...</th><th>At the same time...</th><th>Then...</th></tr>
+  <tr>
+    <td>Carvana's gross margin rises</td>
+    <td>Carmax's gross margin also rises</td>
+    <td>Industry-wide tailwind (e.g. used-car prices rising, supply improving) &mdash; not a company-specific edge</td>
+  </tr>
+  <tr>
+    <td>Carvana's SG&amp;A / Revenue falls</td>
+    <td>Carmax's SG&amp;A / Revenue is unchanged</td>
+    <td>Carvana is actually improving operational efficiency &mdash; the scale benefits of the online model may be kicking in</td>
+  </tr>
+  <tr>
+    <td>UXIN's revenue falls</td>
+    <td>Carvana / Carmax revenue is normal</td>
+    <td>China-specific issues (financing environment, policy, consumer confidence) &mdash; not an industry-wide problem</td>
+  </tr>
+  <tr>
+    <td>Autohome's advertising revenue falls</td>
+    <td>Carvana / Carmax / AutoNation revenue is normal</td>
+    <td>China's auto industry marketing budgets are contracting (or share is being taken by Dongchedi) &mdash; watch overall China auto demand</td>
+  </tr>
+  <tr>
+    <td>Carvana's gross margin falls</td>
+    <td>AutoNation's new-car inventory rises</td>
+    <td>An oversupply of new cars is crowding out used-car demand &mdash; the industry may be entering a price war, with used-car value facing depreciation risk</td>
+  </tr>
+</table>
+
+<h2>The Monitored vs. the Monitor</h2>
+
+<p>An easily overlooked angle: <strong>your competitors are also watching you.</strong></p>
+
+<blockquote>
+  Your SEC filings (once you are public) will be analyzed word-for-word by competitors and institutional investors.<br>
+  That means: <strong>every number in your filings, every sentence in your press releases, every phrase in your Earnings Call, is a signal you are sending to the market.</strong>
+</blockquote>
+
+<p>If you discover in the competitor monitoring system that a competitor is paying unusual attention to one of your businesses (e.g. they mention you on their Earnings Call, or they highlight you as a comparison on their IR page), <strong>work it backward: that business is likely the threat they see as biggest &mdash; which means it is where you should be investing most.</strong></p>
+
+<div class="takeaway">
+  The value of a competitor monitoring system is not "aggregating information" but "forming judgment." The system turns raw data into structured intelligence; you turn intelligence into strategic judgment that guides your own company.
+</div>
+
+<hr>
+
+<h2>Quiz (Final Lesson)</h2>
+
+<div class="quiz">
+
+<h3>Q1: Why is monitoring Carmax not just "watching a competitor" but "establishing an industry efficiency benchmark"?</h3>
+<p><input type="text" id="q1" placeholder="Answer in one or two sentences" style="width:100%"></p>
+<div class="reveal">
+  <details>
+    <summary>Click to reveal answer</summary>
+    <p><strong>Carmax is the most operationally mature player in the industry; its turnover speed and gross margin represent the ceiling of the "offline best practice" model.</strong> If Carvana's online model cannot beat Carmax on efficiency and cost, it has no reason to exist. Therefore Carmax's numbers become the industry's "baseline" &mdash; beating Carmax means the differentiation of the model is working; trailing Carmax means online has not yet proven itself.</p>
+  </details>
+</div>
+
+<h3>Q2: When Autohome's advertising revenue falls but US companies like Carvana / AutoNation are performing normally, what does that tell you?</h3>
+<p><input type="text" id="q2" placeholder="Answer in one or two sentences" style="width:100%"></p>
+<div class="reveal">
+  <details>
+    <summary>Click to reveal answer</summary>
+    <p><strong>The problem is in the China market, not a global industry issue.</strong> Autohome's advertisers are mainly Chinese OEMs and dealers &mdash; their ad budgets shrinking means demand-side or dealer profitability in China is deteriorating. But the US market shows no such signal, so: (i) it is not a global auto downturn; (ii) it may be a China-specific issue (policy, consumer confidence, domestic competition); (iii) it may also be Autohome losing share to Dongchedi &mdash; this needs to be verified separately.</p>
+  </details>
+</div>
+
+<h3>Q3: Once your company is public, competitors will monitor you in similar ways. What are the implications for your own SEC filing behavior?</h3>
+<p><input type="text" id="q3" placeholder="Answer in one or two sentences" style="width:100%"></p>
+<div class="reveal">
+  <details>
+    <summary>Click to reveal answer</summary>
+    <p><strong>Every filing is a signal sent to competitors.</strong> Specifically: (i) Item 1A (Risk Factors) of your 10-K will be analyzed word-for-word by competitors looking for your weaknesses; (ii) Officer changes, material agreements, and earnings warnings in your 8-Ks will be picked up immediately by their intelligence systems; (iii) Emphasis on or avoidance of a particular business in your Earnings Call will be interpreted as a change in strategic priority. So a filing is not just a compliance obligation &mdash; <strong>it is an information battlefield between you and your competitors. Every time you write a filing, ask "what will the other side do when they read it."</strong></p>
+  </details>
+</div>
+
+</div>
+
+<div style="background:#f0f0e8;padding:1rem 1.2rem;margin:3rem 0 1rem;font-size:0.95rem;">
+  <strong>Series complete.</strong> Five lessons covered the SEC system &rarr; financial metrics &rarr; event judgment &rarr; management signals &rarr; monitoring framework.<br><br>
+  <strong>Next step:</strong> Return to PRD v2.0 (<code>/Users/liuming/sec/PRD-competitor-intel-mvp-v2.md</code>); you should now be able to understand the "why" behind every module design in that document. Open a new conversation and let a coding agent build out the system.
+</div>
+
+<hr style="margin-top:3rem;">
+<p style="font-size:0.85rem;color:#888;">
+  Full series: <a href="0001-sec-filing-101.html">0001 SEC Filing 101</a> &rarr; <a href="0002-financial-metrics-used-car.html">0002 Financial Metrics</a> &rarr; <a href="0003-8k-deep-dive.html">0003 8-K Events</a> &rarr; <a href="0004-earnings-call.html">0004 Earnings Call</a> &rarr; 0005 Monitoring Framework<br>
+  Reference: <a href="../reference/sec-form-types.html">SEC Forms Cheat Sheet</a> (printable)<br>
+  To review any lesson, just say "reopen lesson 000X".
+</p>
+
+</body>
+</html>

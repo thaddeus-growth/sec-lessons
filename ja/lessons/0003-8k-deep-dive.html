@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 0003 — 8-K 事象の深掘り</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "ET Book", "Palatino Linotype", Palatino, "Noto Serif SC", serif;
+    background: #fffff8; color: #111; line-height: 1.6;
+    max-width: 720px; margin: 2rem auto; padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+  p { margin: 0.7rem 0; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+  th { font-weight: 500; background: #f8f8f4; }
+  .quiz { background: #f4f4ee; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 6px; }
+  .quiz h3 { margin-top: 0; }
+  .quiz details { margin-top: 0.4rem; }
+  .takeaway { background: #fff3cd; border-left: 3px solid #f0b400; padding: 0.6rem 1rem; margin: 1.5rem 0; font-weight: 500; }
+  .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  .next { background: #f0f0e8; padding: 1rem 1.2rem; margin: 3rem 0 1rem; font-size: 0.95rem; }
+  a { color: #a33; text-decoration: none; }
+  .case { background: #fafafa; border: 1px solid #e0e0e0; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .case h3 { margin-top: 0; color: #a33; }
+  .escalate { background: #fff0f0; border-left: 3px solid #c44; padding: 0.5rem 1rem; margin: 0.8rem 0; }
+  .ignore { background: #f0f8f0; border-left: 3px solid #4a4; padding: 0.5rem 1rem; margin: 0.8rem 0; }
+  .watch { background: #fffdf0; border-left: 3px solid #f0b400; padding: 0.5rem 1rem; margin: 0.8rem 0; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  Lesson 0003 · <a href="0002-financial-metrics-used-car.html">← 前のレッスン：財務指標</a> · <a href="0004-earnings-call.html">次のレッスン：決算電話会議 →</a>
+</div>
+
+<h1>8-K 事象の深掘り<br><small style="font-size:1rem;color:#666;">何が「上司に報告する価値があるか」</small></h1>
+
+<p>
+  Lesson 0001 では 8-K とは何かを学びました。このレッスンでは、<strong>1 本の 8-K の重要性をどう判断するか</strong>を扱います。これは競合モニタリング・システムにおいて最も「人間による判断力」を要するプロセスであり、戦略投資の責任者としてのあなたの最も価値のある領域です。システムが「取りこぼさない」ことを担当し、あなたが「誤判定しない」ことを担当します。
+</p>
+
+<h2>判断フレームワーク：3 つの軸</h2>
+
+<table>
+  <tr><th>軸</th><th>自問すべきこと</th><th>重み</th></tr>
+  <tr><td><strong>事象の性質</strong></td><td>これは業務上の変化か、それともコンプライアンス目的の更新か？</td><td>⭐⭐⭐⭐⭐</td></tr>
+  <tr><td><strong>頻度とパターン</strong></td><td>単独の事象か、それとも一連の動きの一部か？</td><td>⭐⭐⭐⭐</td></tr>
+  <tr><td><strong>事業への影響の連鎖</strong></td><td>競争環境・財務状況・経営陣の安定性を変えるか？</td><td>⭐⭐⭐⭐⭐</td></tr>
+</table>
+
+<h2>実例：Carvana の直近 3 本の 8-K</h2>
+
+<div class="case">
+  <h3>事例 1：2026-05-06 8-K — Items 5.02, 5.03, 5.07</h3>
+  <p>Items: <strong>5.02</strong>（役員・取締役の異動）+ <strong>5.03</strong>（定款変更）+ <strong>5.07</strong>（株主投票結果）</p>
+
+  <div class="escalate">
+    <strong>🔴 上に報告。</strong>3 つの Item が同時に出現しており、5.02 は役員異動です——これは全 8-K Item の中で最も注目すべきカテゴリです。5.03（定款変更）と組み合わさると、ガバナンス構造の変化を示している可能性があります。<br><br>
+    <strong>フォローアップ：</strong>誰が異動したのか（CEO？CFO？COO？）を確認し、Form 4 でインサイダーの大量売却が出ていないかチェック（出ていれば深刻度が増す）、前四半期業績に異常がなかったか確認（業績問題を理由に更迭された可能性）。
+  </div>
+</div>
+
+<div class="case">
+  <h3>事例 2：2026-04-29 8-K — Items 2.02, 9.01</h3>
+  <p>Items: <strong>2.02</strong>（業績発表）+ <strong>9.01</strong>（添付ファイル / 財務諸表）</p>
+
+  <div class="watch">
+    <strong>🟡 通常監視。</strong>これは最も一般的な 8-K です——四半期業績発表。Item 2.02 自体は重要ではなく（中身は「季報を出しました」という通知）、重要なのは同時に発表されたプレスリリース内の数字です。<br><br>
+    <strong>標準的なアクション：</strong>プレスリリースの数字を 10-Q や前年同期と比較する。数字が「サプライズ」（大幅な上方・下方乖離）のときにのみエスカレーション。
+  </div>
+</div>
+
+<div class="case">
+  <h3>事例 3：2026-02-18 8-K — Items 2.02, 9.01</h3>
+  <p>事例 2 とまったく同じ——これは年次業績発表。同じパターンです。</p>
+
+  <div class="watch">
+    <strong>🟡 通常監視。</strong>四半期業績発表と同じ。ただし年次業績にはもう 1 つ：<strong>ガイダンス（翌年見通し）</strong> を見てください。経営陣の翌年見通しは何か？この見通しは前年同期に示された見通しと比べて良くなっているか、悪くなっているか？
+  </div>
+</div>
+
+<h2>エスカレーション判断の早見表</h2>
+
+<table>
+  <tr><th>Item / パターン</th><th>判断</th><th>アクション</th></tr>
+  <tr><td>5.02 役員異動 — CEO/CFO</td><td class="escalate" style="font-weight:bold">🔴 即時エスカレーション</td><td>即座に上司へ報告 + 辞任理由を確認 + Form 4 をチェック + 業績を確認</td></tr>
+  <tr><td>5.02 役員異動 — その他 C-level</td><td class="watch" style="font-weight:bold">🟡 注視</td><td>記録 + 追加の異動がないかフォロー</td></tr>
+  <tr><td>2.02 業績発表 — 数字がコンセンサスを 20% 以上上下に乖離</td><td class="escalate" style="font-weight:bold">🔴 エスカレーション</td><td>業界トレンドが変化しており、業界に対する見立ての見直しが必要</td></tr>
+  <tr><td>2.02 業績発表 — 数字が正常範囲</td><td class="ignore" style="font-weight:bold">🟢 記録のみ</td><td>通常の分析プロセスに組み込む</td></tr>
+  <tr><td>1.01 重要な契約</td><td class="escalate" style="font-weight:bold">🔴 エスカレーション</td><td>具体的な契約内容を確認——自社サプライヤー / 顧客と重複するなら直接的な競合シグナル</td></tr>
+  <tr><td>4.01 監査人の変更</td><td class="escalate" style="font-weight:bold">🔴 エスカレーション</td><td>監査人の辞任 / 解雇 = 財務上の問題の可能性（エンロン事件は監査人の告発がきっかけ）</td></tr>
+  <tr><td>1 週間内に複数の 8-K が集中</td><td class="escalate" style="font-weight:bold">🔴 エスカレーション</td><td>個別の 8-K 1 本は重要でないが、集中して出る = 大事が進行中</td></tr>
+  <tr><td>Form 4 でインサイダーの大規模売却（計画的でない）</td><td class="escalate" style="font-weight:bold">🔴 エスカレーション</td><td>インサイダーが足で投票している</td></tr>
+</table>
+
+<h2>最もよくある判断ミス</h2>
+
+<blockquote>
+  <strong>ミス 1：「Item 2.02 が出た、急いで報告！」</strong><br>
+  違います。2.02 は四半期報告のたびに必ず出るので、それ自体は重要ではありません。重要なのは、プレスリリース内の数字です。「事象がある」と「重要な事象がある」を混同しないでください。
+</blockquote>
+
+<blockquote>
+  <strong>ミス 2：「Form 144 でインサイダーが売却する——ネガティブだ！」</strong><br>
+  限りません。Form 144 は 10b5-1 プラン（事前設定された売買計画）に沿って経営陣が実行することが多く、日常的な財務プランニングと結びついており、必ずしもネガティブ・シグナルではありません。「計画的な分散売却」と「突然のパニック売り」を区別してください。
+</blockquote>
+
+<blockquote>
+  <strong>ミス 3：「自分だけがこの 8-K を受け取った。他人は知らない、自分に情報優位性がある」</strong><br>
+  これは SEC の公開データであり、世界中のヘッジファンドとあなたの競合が同時に受け取っています。あなたの優位性は「早く」受け取ることではなく、「より速く・より正確に」読み解くことです。
+</blockquote>
+
+<div class="takeaway">
+  システムが「取りこぼさない」ことを担当し、あなたが「誤判定しない」ことを担当する。8-K 判断力の核心は：何が真のシグナルで、何が開示義務のルーティンかを見極めることです。
+</div>
+
+<hr>
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<h3>Q1: CFO の辞任（Item 5.02）と一般 VP の辞任（同じく Item 5.02）では、対応は同じであるべきですか？</h3>
+<p><input type="text" id="q1" placeholder="1〜2 文で回答してください" style="width:100%"></p>
+<div class="reveal">
+  <details>
+    <summary>答えを見る</summary>
+    <p><strong>同じではありません。CFO の辞任は即時エスカレーションし、財務問題の有無を確認。一般 VP の辞任は記録して様子見で十分です。</strong>CFO は企業の最も機微な財務情報を握っており、辞任のタイミングが業績発表や監査人交代と近接しているなら危険シグナルです。VP の辞任は通常のキャリア変動である可能性が高く、中核事業ライン担当の SVP でない限り様子見で十分です。</p>
+  </details>
+</div>
+
+<h3>Q2: ある競合企業が同日に 2 本の 8-K を提出しました（1 本は Item 5.02 役員辞任、もう 1 本は Item 4.01 監査人交代）。どう判断しますか？</h3>
+<p><input type="text" id="q2" placeholder="1〜2 文で回答してください" style="width:100%"></p>
+<div class="reveal">
+  <details>
+    <summary>答えを見る</summary>
+    <p><strong>重大な危険シグナルです——即時エスカレーション。</strong>監査人交代と役員辞任が同時に発生するのは、企業内で深刻な財務上の衝突が起きていることを示唆します。監査人が署名したくない何かを発見し、役員（特に CFO）がそれによって辞めざるを得なくなった可能性があります。歴史上、財務不正事件の多くで同様のパターンが現れています。事後的に何もなかったと判明しても、<strong>誤判定より取りこぼしを避けよ</strong>、という原則に従うべきです。</p>
+  </details>
+</div>
+
+<h3>Q3: Item 2.02（業績発表）はどんな場合に「上司に報告する」価値がありますか？</h3>
+<p><input type="text" id="q3" placeholder="1〜2 文で回答してください" style="width:100%"></p>
+<div class="reveal">
+  <details>
+    <summary>答えを見る</summary>
+    <p><strong>業績数字が市場コンセンサスから明らかに乖離したときです。</strong>具体的には：売上または純利益が市場コンセンサスから 20% 以上乖離した場合、あるいは企業が翌四半期のガイダンス（guidance）を自主的に引き下げた場合（guidance cut）。それ以外の場合、2.02 はルーティンであり、通常フローで処理すれば十分です。</p>
+  </details>
+</div>
+
+</div>
+
+<div class="next">
+  <strong>次のレッスン：</strong> <a href="0004-earnings-call.html">Lesson 0004 — 決算電話会議（Earnings Call）の戦略的価値</a>：なぜ経営陣の言葉選びが数字より多くを語るのか<br>
+  <strong>推奨文献：</strong> SEC 公式の <a href="https://www.sec.gov/files/reada8k.pdf">How to Read an 8-K</a>（3 ページの PDF）
+</div>
+
+<hr style="margin-top:3rem;">
+<p style="font-size:0.85rem;color:#888;">
+  このレッスンはシリーズ全体で最も重要です——8-K 事象の判断力が、モニタリング・システムの価値（「情報爆撃」なのか「精密なインテリジェンス」なのか）を直接決めます。
+</p>
+
+</body>
+</html>

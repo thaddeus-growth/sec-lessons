@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 0001 — SEC Filing 101：三张最核心的表格</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "ET Book", "Palatino Linotype", Palatino, "Noto Serif SC", "Source Han Serif SC", serif;
+    background: #fffff8;
+    color: #111;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 0.3rem; font-weight: 400; font-style: italic; }
+  p { margin: 0.7rem 0; }
+  .sidenote {
+    float: right; clear: right; width: 180px; margin-right: -210px;
+    font-size: 0.82rem; color: #555; line-height: 1.4;
+    margin-top: 0.2rem;
+  }
+  @media (max-width: 960px) {
+    .sidenote { float: none; width: auto; margin-right: 0; margin-top: 0; font-style: italic; }
+  }
+  blockquote {
+    margin: 1rem 0; padding: 0.5rem 1rem;
+    border-left: 3px solid #c44; background: #fff8f6;
+    font-style: italic; color: #444;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
+  th { font-weight: 500; background: #f8f8f4; }
+  .quiz { background: #f4f4ee; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 6px; }
+  .quiz h3 { margin-top: 0; font-style: normal; }
+  .quiz p { margin: 0.5rem 0; }
+  .quiz input[type="text"] { width: 100%; padding: 0.4rem 0.6rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+  .quiz .reveal { margin-top: 0.8rem; }
+  .quiz .reveal details { margin-top: 0.4rem; }
+  .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  .next { background: #f0f0e8; padding: 1rem 1.2rem; margin: 3rem 0 1rem; font-size: 0.95rem; }
+  a { color: #a33; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .takeaway { background: #fff3cd; border-left: 3px solid #f0b400; padding: 0.6rem 1rem; margin: 1.5rem 0; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  Lesson 0001 · <a href="../reference/sec-form-types.html">参考：SEC 表格类型速查表</a> · <a href="0002-financial-statements.html">下一课：读懂三大报表 →</a>
+</div>
+
+<h1>SEC Filing 101<br><small style="font-size:1rem;color:#666;">三张表格理解美国上市公司披露体系</small></h1>
+
+<p>
+  美国所有的上市公司都必须向 SEC（美国证券交易委员会）定期提交文件（filing），并通过 EDGAR 系统向全世界公开。
+  这套披露体系是全球最成熟、最透明的资本市场基础设施之一。
+</p>
+
+<p>
+  对于战略投资者来说，<strong>SEC filing 是免费的、法定的、结构化的竞品情报</strong>——比新闻准确，比第三方研报客观，比私下打听可靠。
+  而且任何人都可以访问，不需要付费，不需要注册。
+</p>
+
+<div class="takeaway">
+  核心认知：SEC filing 不是"合规负担"，而是竞争对手被迫定期向你公开的战略情报。
+</div>
+
+<h2>三张核心表格</h2>
+
+<p>
+  SEC 有上百种不同的 form 类型，但竞品监控只需关注三张：
+</p>
+
+<table>
+  <tr>
+    <th>表格</th>
+    <th>频率</th>
+    <th>内容</th>
+    <th>竞品监控价值</th>
+  </tr>
+  <tr>
+    <td><strong>10-K</strong><br><span style="font-size:0.85rem;color:#888">年度报告</span></td>
+    <td>每年一次<br>（财年结束后 60-90 天内）</td>
+    <td>最全面的年度披露：经审计的财务报表、业务描述、风险因素、管理层讨论（MD&A）</td>
+    <td>⭐⭐⭐⭐⭐<br>最完整的"一家公司长什么样"的快照</td>
+  </tr>
+  <tr>
+    <td><strong>10-Q</strong><br><span style="font-size:0.85rem;color:#888">季度报告</span></td>
+    <td>每季一次<br>（季度结束后 40-45 天内）</td>
+    <td>季度财务数据（未经审计）+ 期间重大变化更新</td>
+    <td>⭐⭐⭐⭐⭐<br>追踪业绩趋势、发现拐点</td>
+  </tr>
+  <tr>
+    <td><strong>8-K</strong><br><span style="font-size:0.85rem;color:#888">重大事件报告</span></td>
+    <td>不定期<br>（事件发生后 4 个工作日内）</td>
+    <td>任何"对投资者重要的"事件：高管变动、收购、破产、合作、业绩预告……</td>
+    <td>⭐⭐⭐⭐⭐<br>最快获知竞品战略动作的渠道</td>
+  </tr>
+</table>
+
+<div class="sidenote">
+  Carvana 的财年和日历年一致（12 月 31 日截止），所以它的 10-K 在每年 2 月，10-Q 在 4 月/7 月/10 月。
+</div>
+
+<h2>10-K：公司的年度"体检报告"</h2>
+
+<p>
+  <strong>10-K 是美国上市公司最重要的文件。</strong>它是一份法律文件，所有内容都要承担法律责任（不实陈述会被 SEC 处罚或股东诉讼）。
+</p>
+
+<p>一份 10-K 的结构是固定的，主要包含以下部分：</p>
+
+<table>
+  <tr><th>部分</th><th>中文含义</th><th>竞品监控重点</th></tr>
+  <tr><td>Item 1. Business</td><td>业务描述</td><td>商业模式、收入来源、竞争格局的自述</td></tr>
+  <tr><td>Item 1A. Risk Factors</td><td>风险因素</td><td>⚠️ 公司自己承认的风险——最有价值的部分</td></tr>
+  <tr><td>Item 7. MD&A</td><td>管理层讨论与分析</td><td>管理层对业绩的解释、趋势判断、未来展望</td></tr>
+  <tr><td>Item 8. Financial Statements</td><td>经审计的财务报表</td><td>收入、利润、资产、负债、现金流（最可靠的数据）</td></tr>
+  <tr><td>Item 15. Exhibits</td><td>附件</td><td>合同、收购协议等原始文件</td></tr>
+</table>
+
+<blockquote>
+  <strong>战略投资者的阅读顺序：</strong><br>
+  Item 1A（风险）→ Item 7（管理层怎么说）→ Item 8（数字怎么说的）→ Item 1（商业模式是否还在成立）
+</blockquote>
+
+<h2>10-Q：季度"体检摘要"</h2>
+
+<p>
+  10-Q 可以理解为"简版的 10-K + 最新一期数据"。数据未经审计，但公司仍然负法律责任。核心价值：
+</p>
+<ul>
+  <li><strong>追踪趋势</strong>：四个季度的 10-Q 拼在一起，可以看到公司在一年内的变化轨迹</li>
+  <li><strong>发现拐点</strong>：收入增速是加快还是放缓？毛利率是改善还是恶化？</li>
+  <li><strong>比 10-K 快</strong>：10-K 要等年度审计，10-Q 在季度结束 40 天内就出来了</li>
+</ul>
+
+<h2>8-K：公司的"新闻联播"</h2>
+
+<p>
+  8-K 是最特殊的一张表——它<strong>不定期提交、事件驱动、时效性最强</strong>。法律规定公司在发生"重大事件"后的 4 个工作日内必须提交 8-K。
+</p>
+
+<p>SEC 把所有可能的"重大事件"编码成了 <strong>Item 号</strong>，从 1.01 到 9.01。知道这些 Item 号对应什么，是竞品监控的核心技能（下一课专门讲）。</p>
+
+<p>现在先记住最重要的几个：</p>
+
+<table>
+  <tr><th>Item</th><th>事件</th><th>竞品监控意义</th></tr>
+  <tr><td>2.02</td><td>业绩发布</td><td>在 10-Q 出来之前就能看到关键数字；有时候是"预警"（pre-announcement，业绩和预期差很多）</td></tr>
+  <tr><td>5.02</td><td>高管/董事变动</td><td>CFO 离职？CEO 换了？可能是内部出了问题的信号</td></tr>
+  <tr><td>1.01</td><td>重大合同</td><td>签了大单？换了供应商？战略合作？</td></tr>
+  <tr><td>2.01</td><td>重大资产收购/出售</td><td>买公司、卖业务——战略方向变了</td></tr>
+</table>
+
+<div class="takeaway">
+  小测试：如果你只能监控一种 SEC form，选 8-K。因为它覆盖了 10-K 和 10-Q 之外的所有"意外事件"。
+</div>
+
+<h2>一个具体例子：Carvana 最近 5 个月</h2>
+
+<p>以下是 Carvana（CVNA）在 2026 年的 filing 时间线（从我们的系统里拉出来的真实数据）：</p>
+
+<table>
+  <tr><th>日期</th><th>Form</th><th>含义</th></tr>
+  <tr><td>2026-06-15</td><td>Form 144</td><td>内部人计划减持（不需要太紧张，可能是计划中的）</td></tr>
+  <tr><td>2026-06-11</td><td>Form 4</td><td>内部人实际交易（必须披露买卖了多少股、什么价格）</td></tr>
+  <tr><td>2026-05-06</td><td>8-K</td><td>⚠️ Items 5.02（高管变动）、5.03（章程修改）、5.07（股东投票）</td></tr>
+  <tr><td>2026-04-29</td><td>10-Q</td><td>📊 第一季度财报（Revenue $6.4B, Net Income $250M）</td></tr>
+  <tr><td>2026-04-29</td><td>8-K</td><td>📊 Items 2.02（业绩发布）、9.01（附件）</td></tr>
+  <tr><td>2026-02-18</td><td>10-K</td><td>📊 2025 年度报告</td></tr>
+</table>
+
+<p>
+  在这个时间线里，5 月 6 日的 8-K 是最值得关注的——高管变动 + 章程修改 + 股东投票，三个信号同时出现。
+  相比之下，6 月的 Form 144 和 Form 4 是内部人交易，在 Carvana 这种体量的公司属于日常。
+</p>
+
+<hr>
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<h3>Q1: 如果你想了解一家竞品公司的"自己承认的风险"，应该看哪个部分？</h3>
+<p><input type="text" id="q1" placeholder="输入你的答案（表格 + 部分）"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>10-K 的 Item 1A（Risk Factors）</strong></p>
+    <p>这是公司自己列出的风险清单，必须披露"任何可能对业务产生重大不利影响的风险"。因为是公司的法律声明，相对客观。二手车公司常见的风险披露包括：车辆质量风险、贷款违约风险、宏观经济影响二手车需求、监管变化等。</p>
+  </details>
+</div>
+
+<h3>Q2: 哪张 form 是在"事件发生后 4 个工作日内"必须披露的？</h3>
+<p><input type="text" id="q2" placeholder="输入你的答案（form 代码）"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>8-K</strong></p>
+    <p>8-K 的特殊性在于它是"事件驱动"的，不像 10-K 和 10-Q 那样按固定周期提交。所以当你看到一家竞品公司突然提交了 8-K，马上打开看内容——大概率有值得关注的变化。</p>
+  </details>
+</div>
+
+<h3>Q3: 10-K 和 10-Q 的财务数据，哪个经过审计？</h3>
+<p><input type="text" id="q3" placeholder="输入你的答案"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>10-K 的数据经过独立审计，10-Q 的数据没有。</strong></p>
+    <p>审计意味着外部会计师事务所（比如四大）已经验证了财务数据的准确性。10-Q 的数据是公司自己报的，未经审计，所以理论上有"调整"的空间（虽然公司仍然负法律责任）。做深度分析时，以 10-K 数据为基准校准 10-Q 数据。</p>
+  </details>
+</div>
+
+</div>
+
+<div class="next">
+  <strong>下一课预览：</strong> <a href="0002-financial-statements.html">Lesson 0002 — 如何从 10-K/10-Q 里提取对二手车行业最重要的财务指标</a><br>
+  <strong>推荐阅读：</strong> SEC 官方出品的 <a href="https://www.sec.gov/files/reada10k.pdf">How to Read a 10-K</a>（英文，3 页 PDF，15 分钟读完）<br>
+  <strong>参考速查：</strong> <a href="../reference/sec-form-types.html">SEC 表格类型速查表</a>（你可以打印出来贴在桌边）
+</div>
+
+<hr style="margin-top:3rem;">
+<p style="font-size:0.85rem;color:#888;">
+  有任何不清楚的地方，在对话里直接问我——我就是你的老师。<br>
+  <em>这个系列的目标不是让你成为 SEC 专家，而是让你能在战略投资部的会议上解释清楚"为什么这条信息重要"。</em>
+</p>
+
+</body>
+</html>

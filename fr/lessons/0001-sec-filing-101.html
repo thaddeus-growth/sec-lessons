@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 0001 — SEC Filing 101 : les trois formulaires fondamentaux</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "ET Book", "Palatino Linotype", Palatino, "Noto Serif SC", "Source Han Serif SC", serif;
+    background: #fffff8;
+    color: #111;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 0.3rem; font-weight: 400; font-style: italic; }
+  p { margin: 0.7rem 0; }
+  .sidenote {
+    float: right; clear: right; width: 180px; margin-right: -210px;
+    font-size: 0.82rem; color: #555; line-height: 1.4;
+    margin-top: 0.2rem;
+  }
+  @media (max-width: 960px) {
+    .sidenote { float: none; width: auto; margin-right: 0; margin-top: 0; font-style: italic; }
+  }
+  blockquote {
+    margin: 1rem 0; padding: 0.5rem 1rem;
+    border-left: 3px solid #c44; background: #fff8f6;
+    font-style: italic; color: #444;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
+  th { font-weight: 500; background: #f8f8f4; }
+  .quiz { background: #f4f4ee; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 6px; }
+  .quiz h3 { margin-top: 0; font-style: normal; }
+  .quiz p { margin: 0.5rem 0; }
+  .quiz input[type="text"] { width: 100%; padding: 0.4rem 0.6rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+  .quiz .reveal { margin-top: 0.8rem; }
+  .quiz .reveal details { margin-top: 0.4rem; }
+  .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  .next { background: #f0f0e8; padding: 1rem 1.2rem; margin: 3rem 0 1rem; font-size: 0.95rem; }
+  a { color: #a33; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .takeaway { background: #fff3cd; border-left: 3px solid #f0b400; padding: 0.6rem 1rem; margin: 1.5rem 0; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  Lesson 0001 · <a href="../reference/sec-form-types.html">Référence : aide-mémoire des formulaires SEC</a> · <a href="0002-financial-statements.html">Leçon suivante : lire les trois états financiers →</a>
+</div>
+
+<h1>SEC Filing 101<br><small style="font-size:1rem;color:#666;">Trois formulaires pour comprendre la communication des sociétés cotées américaines</small></h1>
+
+<p>
+  Toutes les sociétés cotées aux États-Unis doivent déposer périodiquement des documents (filings) auprès de la SEC (Securities and Exchange Commission, l'autorité américaine des marchés financiers), et les rendre publics au monde entier via le système EDGAR.
+  Ce dispositif de communication financière est l'une des infrastructures de marché de capitaux les plus matures et transparentes au monde.
+</p>
+
+<p>
+  Pour un investisseur stratégique, les <strong>SEC filings sont du renseignement concurrentiel gratuit, légal et structuré</strong> — plus précis que la presse, plus objectif que les rapports de courtiers tiers, plus fiable que les conversations en off.
+  Et ils sont accessibles à tous, sans abonnement ni inscription.
+</p>
+
+<div class="takeaway">
+  Vision clé : un SEC filing n'est pas un « fardeau de conformité » — c'est du renseignement stratégique que vos concurrents sont obligés de publier régulièrement à votre intention.
+</div>
+
+<h2>Les trois formulaires fondamentaux</h2>
+
+<p>
+  La SEC compte plus d'une centaine de formulaires différents, mais la veille concurrentielle n'en nécessite que trois :
+</p>
+
+<table>
+  <tr>
+    <th>Formulaire</th>
+    <th>Fréquence</th>
+    <th>Contenu</th>
+    <th>Valeur pour la veille</th>
+  </tr>
+  <tr>
+    <td><strong>10-K</strong><br><span style="font-size:0.85rem;color:#888">Rapport annuel</span></td>
+    <td>Une fois par an<br>(60 à 90 jours après la clôture de l'exercice)</td>
+    <td>Communication annuelle la plus complète : états financiers audités, description de l'activité, facteurs de risque, analyse du management (MD&A)</td>
+    <td>⭐⭐⭐⭐⭐<br>L'instantané le plus complet : « à quoi ressemble l'entreprise »</td>
+  </tr>
+  <tr>
+    <td><strong>10-Q</strong><br><span style="font-size:0.85rem;color:#888">Rapport trimestriel</span></td>
+    <td>Une fois par trimestre<br>(40 à 45 jours après la fin du trimestre)</td>
+    <td>Données financières trimestrielles (non auditées) + mise à jour des changements significatifs</td>
+    <td>⭐⭐⭐⭐⭐<br>Suivre la tendance des résultats, détecter les points d'inflexion</td>
+  </tr>
+  <tr>
+    <td><strong>8-K</strong><br><span style="font-size:0.85rem;color:#888">Déclaration d'événement significatif</span></td>
+    <td>Ponctuel<br>(dans les 4 jours ouvrés suivant l'événement)</td>
+    <td>Tout événement « important pour l'investisseur » : changement de dirigeant, acquisition, faillite, partenariat, alerte sur les résultats…</td>
+    <td>⭐⭐⭐⭐⭐<br>Le canal le plus rapide pour capter les décisions stratégiques des concurrents</td>
+  </tr>
+</table>
+
+<div class="sidenote">
+  L'exercice comptable de Carvana coïncide avec l'année civile (clôture au 31 décembre) : son 10-K arrive donc en février, ses 10-Q en avril, juillet et octobre.
+</div>
+
+<h2>10-K : le « bilan de santé annuel » de l'entreprise</h2>
+
+<p>
+  <strong>Le 10-K est le document le plus important d'une société cotée américaine.</strong> C'est un document légal : tout son contenu engage la responsabilité de l'entreprise (toute fausse déclaration peut être sanctionnée par la SEC ou attaquée en justice par les actionnaires).
+</p>
+
+<p>La structure d'un 10-K est fixe et comprend principalement les sections suivantes :</p>
+
+<table>
+  <tr><th>Section</th><th>Signification</th><th>Point d'attention pour la veille</th></tr>
+  <tr><td>Item 1. Business</td><td>Description de l'activité</td><td>Modèle économique, sources de revenus, paysage concurrentiel tels que décrits par l'entreprise</td></tr>
+  <tr><td>Item 1A. Risk Factors</td><td>Facteurs de risque</td><td>⚠️ Les risques que l'entreprise reconnaît elle-même — la partie la plus précieuse</td></tr>
+  <tr><td>Item 7. MD&A</td><td>Discussion et analyse du management</td><td>L'explication des résultats par le management, son analyse des tendances, ses perspectives</td></tr>
+  <tr><td>Item 8. Financial Statements</td><td>États financiers audités</td><td>Revenus, résultat, actifs, passifs, flux de trésorerie (les données les plus fiables)</td></tr>
+  <tr><td>Item 15. Exhibits</td><td>Annexes</td><td>Contrats, accords d'acquisition et autres documents originaux</td></tr>
+</table>
+
+<blockquote>
+  <strong>Ordre de lecture pour l'investisseur stratégique :</strong><br>
+  Item 1A (risques) → Item 7 (comment le management parle) → Item 8 (ce que disent les chiffres) → Item 1 (le modèle économique tient-il toujours ?)
+</blockquote>
+
+<h2>10-Q : le « résumé trimestriel de santé »</h2>
+
+<p>
+  Le 10-Q peut être vu comme une « version allégée du 10-K + données du trimestre en cours ». Les chiffres ne sont pas audités, mais l'entreprise reste juridiquement responsable. Sa valeur tient à :
+</p>
+<ul>
+  <li><strong>Suivre les tendances :</strong> en combinant les 10-Q des quatre trimestres, on voit la trajectoire de l'entreprise sur un an</li>
+  <li><strong>Détecter les points d'inflexion :</strong> la croissance du chiffre d'affaires accélère-t-elle ou ralentit-elle ? La marge brute s'améliore-t-elle ou se dégrade-t-elle ?</li>
+  <li><strong>Plus rapide que le 10-K :</strong> le 10-K attend l'audit annuel, le 10-Q est disponible en 40 jours</li>
+</ul>
+
+<h2>8-K : le « journal télévisé » de l'entreprise</h2>
+
+<p>
+  Le 8-K est le formulaire le plus particulier — il est <strong>déposé ponctuellement, déclenché par un événement, et le plus actuel</strong>. La loi impose à l'entreprise de déposer un 8-K dans les 4 jours ouvrés suivant un « événement significatif ».
+</p>
+
+<p>La SEC a codifié tous les « événements significatifs » possibles en <strong>numéros d'Item</strong>, allant de 1.01 à 9.01. Connaître la signification de chaque Item est la compétence clé de la veille concurrentielle (traitée en détail dans la leçon suivante).</p>
+
+<p>Pour l'instant, retenez les plus importants :</p>
+
+<table>
+  <tr><th>Item</th><th>Événement</th><th>Intérêt pour la veille</th></tr>
+  <tr><td>2.02</td><td>Publication des résultats</td><td>Voir les chiffres clés avant le 10-Q ; parfois une « pré-annonce » (pre-announcement) si l'écart avec les attentes est important</td></tr>
+  <tr><td>5.02</td><td>Changement de dirigeant ou d'administrateur</td><td>Départ du CFO ? Changement de CEO ? Possible signe d'un problème interne</td></tr>
+  <tr><td>1.01</td><td>Contrat significatif</td><td>Contrat important remporté ? Changement de fournisseur ? Partenariat stratégique ?</td></tr>
+  <tr><td>2.01</td><td>Acquisition ou cession d'actif significatif</td><td>Achat d'une entreprise, vente d'une activité — la stratégie évolue</td></tr>
+</table>
+
+<div class="takeaway">
+  Mini-test : si vous ne pouvez suivre qu'un seul formulaire SEC, choisissez le 8-K. Il couvre tous les « événements意外 » que les 10-K et 10-Q ne rapportent pas.
+</div>
+
+<h2>Un exemple concret : les 5 derniers mois de Carvana</h2>
+
+<p>Voici la chronologie des filings de Carvana (CVNA) en 2026 (données réelles extraites de notre système) :</p>
+
+<table>
+  <tr><th>Date</th><th>Formulaire</th><th>Signification</th></tr>
+  <tr><td>2026-06-15</td><td>Form 144</td><td>Un initié prévoit de céder des actions (peu alarmant, souvent planifié)</td></tr>
+  <tr><td>2026-06-11</td><td>Form 4</td><td>Transaction effective d'un initié (achat ou vente à déclarer obligatoirement)</td></tr>
+  <tr><td>2026-05-06</td><td>8-K</td><td>⚠️ Items 5.02 (changement de dirigeant), 5.03 (modification des statuts), 5.07 (vote des actionnaires)</td></tr>
+  <tr><td>2026-04-29</td><td>10-Q</td><td>📊 Résultats du premier trimestre (Revenue $6.4B, Net Income $250M)</td></tr>
+  <tr><td>2026-04-29</td><td>8-K</td><td>📊 Items 2.02 (publication des résultats), 9.01 (annexes)</td></tr>
+  <tr><td>2026-02-18</td><td>10-K</td><td>📊 Rapport annuel 2025</td></tr>
+</table>
+
+<p>
+  Dans cette chronologie, le 8-K du 6 mai mérite le plus d'attention — changement de dirigeant + modification des statuts + vote des actionnaires, trois signaux simultanés.
+  En comparaison, les Form 144 et Form 4 de juin sont des transactions d'initiés, classiques pour une entreprise de la taille de Carvana.
+</p>
+
+<hr>
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<h3>Q1 : Si vous voulez connaître les « risques reconnus par l'entreprise elle-même » d'un concurrent, quelle section faut-il lire ?</h3>
+<p><input type="text" id="q1" placeholder="Saisissez votre réponse (formulaire + section)"></p>
+<div class="reveal">
+  <details>
+    <summary>Voir la réponse</summary>
+    <p><strong>Item 1A (Risk Factors) du 10-K</strong></p>
+    <p>C'est la liste des risques établie par l'entreprise, qui doit divulguer « tout risque susceptible d'avoir un effet défavorable significatif sur l'activité ». Parce qu'il s'agit d'une déclaration légale, elle est relativement objective. Les risques typiques des concessionnaires de véhicules d'occasion incluent : la qualité des véhicules, le risque de défaut de crédit, l'impact macroéconomique sur la demande, les évolutions réglementaires, etc.</p>
+  </details>
+</div>
+
+<h3>Q2 : Quel formulaire doit être déposé dans les « 4 jours ouvrés » suivant un événement ?</h3>
+<p><input type="text" id="q2" placeholder="Saisissez votre réponse (code du formulaire)"></p>
+<div class="reveal">
+  <details>
+    <summary>Voir la réponse</summary>
+    <p><strong>Le 8-K</strong></p>
+    <p>La particularité du 8-K est d'être « déclenché par un événement », contrairement au 10-K et au 10-Q qui suivent un calendrier fixe. Ainsi, dès qu'un concurrent dépose soudainement un 8-K, ouvrez-le sans tarder — il y a très probablement un changement notable.</p>
+  </details>
+</div>
+
+<h3>Q3 : Parmi les données financières du 10-K et du 10-Q, lesquelles sont auditées ?</h3>
+<p><input type="text" id="q3" placeholder="Saisissez votre réponse"></p>
+<div class="reveal">
+  <details>
+    <summary>Voir la réponse</summary>
+    <p><strong>Les données du 10-K sont auditées par un cabinet indépendant, celles du 10-Q ne le sont pas.</strong></p>
+    <p>L'audit signifie qu'un cabinet externe (par exemple un Big Four) a vérifié l'exactitude des données financières. Les données du 10-Q sont déclarées par l'entreprise elle-même, sans audit, et peuvent donc en théorie faire l'objet d'ajustements (bien que l'entreprise reste juridiquement responsable). Pour une analyse approfondie, calibrez les données du 10-Q à partir de celles du 10-K.</p>
+  </details>
+</div>
+
+</div>
+
+<div class="next">
+  <strong>Leçon suivante :</strong> <a href="0002-financial-statements.html">Lesson 0002 — extraire des 10-K/10-Q les indicateurs financiers les plus importants pour le secteur du véhicule d'occasion</a><br>
+  <strong>Lecture recommandée :</strong> <a href="https://www.sec.gov/files/reada10k.pdf">How to Read a 10-K</a> publié par la SEC (en anglais, PDF de 3 pages, 15 min de lecture)<br>
+  <strong>Aide-mémoire :</strong> <a href="../reference/sec-form-types.html">Aide-mémoire des formulaires SEC</a> (vous pouvez l'imprimer et l'afficher à portée de main)
+</div>
+
+<hr style="margin-top:3rem;">
+<p style="font-size:0.85rem;color:#888;">
+  Pour toute question, posez-la directement dans la conversation — je suis votre professeur.<br>
+  <em>L'objectif de cette série n'est pas de faire de vous un expert SEC, mais de vous permettre d'expliquer clairement en réunion d'investissement pourquoi telle information est importante.</em>
+</p>
+
+</body>
+</html>

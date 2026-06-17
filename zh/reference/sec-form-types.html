@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEC 表格类型速查表</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Palatino Linotype", Palatino, "Noto Serif SC", "Source Han Serif SC", serif;
+    background: #fffff8; color: #111; line-height: 1.6;
+    max-width: 780px; margin: 2rem auto; padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; }
+  h2 { font-size: 1.2rem; margin: 2rem 0 0.4rem; border-bottom: 1px solid #ddd; padding-bottom: 0.2rem; }
+  table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; font-size: 0.88rem; }
+  th, td { padding: 0.45rem 0.55rem; text-align: left; border-bottom: 1px solid #e8e8e0; vertical-align: top; }
+  th { font-weight: 500; background: #f8f8f4; font-size: 0.8rem; text-transform: uppercase; color: #555; }
+  .critical { background: #fff3f3; }
+  .important { background: #fffdf3; }
+  .meta { color: #888; font-size: 0.85rem; margin-bottom: 2rem; }
+  a { color: #a33; text-decoration: none; }
+  .print-hint { background: #f0f0e8; padding: 0.5rem 0.8rem; font-size: 0.8rem; color: #666; margin-bottom: 1.5rem; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  参考文档 · 最后更新 2026-06-16 · <a href="../lessons/0001-sec-filing-101.html">← 回到 Lesson 0001</a>
+</div>
+
+<div class="print-hint">🖨️ 此页面按打印格式优化——可以打印出来贴在桌边。</div>
+
+<h1>SEC 表格类型速查表</h1>
+
+<h2>核心披露（竞品监控必备）</h2>
+<table>
+  <tr><th style="width:70px">Form</th><th style="width:100px">中文名</th><th>内容</th><th style="width:100px">频率</th><th>竞品监控重点</th></tr>
+  <tr class="critical">
+    <td><strong>10-K</strong></td><td>年度报告</td><td>经审计的完整年报：业务描述、风险因素、管理层讨论、三大报表</td><td>每年</td><td>最完整的信息源，了解一家公司的起点</td>
+  </tr>
+  <tr class="critical">
+    <td><strong>10-Q</strong></td><td>季度报告</td><td>未经审计的季度财务数据 + 期间更新</td><td>每季</td><td>追踪业绩趋势，与去年同期对比找拐点</td>
+  </tr>
+  <tr class="critical">
+    <td><strong>8-K</strong></td><td>重大事件报告</td><td>任何重大事件：业绩发布(2.02)、高管变动(5.02)、收购(2.01)、合同(1.01)等</td><td>不定期</td><td>最快获取竞品战略动作；Item 号决定了重要程度</td>
+  </tr>
+</table>
+
+<h2>8-K 常用 Item 号</h2>
+<table>
+  <tr><th style="width:80px">Item</th><th>事件</th><th>重要程度</th><th>竞品监控解读</th></tr>
+  <tr class="critical"><td>1.01</td><td>重大合同签署</td><td>🔴</td><td>新客户、新供应商、战略合作——可能改变竞争格局</td></tr>
+  <tr class="critical"><td>1.02</td><td>重大合同终止</td><td>🔴</td><td>丢了大客户？供应商出问题？</td></tr>
+  <tr class="critical"><td>2.01</td><td>重大资产收购/出售</td><td>🔴</td><td>买公司、卖业务——战略方向变了</td></tr>
+  <tr class="critical"><td>2.02</td><td>业绩发布</td><td>🔴</td><td>在 10-Q 之前看到关键财务数字；业绩预警</td></tr>
+  <tr><td>2.03</td><td>重大财务义务</td><td>🟡</td><td>借了大笔钱、担保了什么东西</td></tr>
+  <tr class="important"><td>2.05</td><td>减值/重组费用</td><td>🟡</td><td>资产减值、裁员重组——可能有麻烦</td></tr>
+  <tr class="critical"><td>3.01</td><td>退市/转板通知</td><td>🔴</td><td>要被摘牌了？这是重大风险信号</td></tr>
+  <tr class="critical"><td>4.01</td><td>审计师变更</td><td>🔴</td><td>审计师辞职或被换掉——往往意味着财务有问题</td></tr>
+  <tr class="critical"><td>5.02</td><td>高管/董事变动</td><td>🔴</td><td>CEO/CFO/COO 离职或任命——人事地震</td></tr>
+  <tr><td>5.03</td><td>章程修改</td><td>🟡</td><td>修改公司章程——可能有治理结构变化</td></tr>
+  <tr class="important"><td>5.07</td><td>股东投票结果</td><td>🟡</td><td>股东会投票——看看股东和董事会有没有矛盾</td></tr>
+  <tr><td>7.01</td><td>Regulation FD 披露</td><td>🟢</td><td>公司主动披露信息（通常配合新闻稿）</td></tr>
+  <tr><td>9.01</td><td>财务报表/附件</td><td>🟢</td><td>通常是 10-K/Q 或 2.02 的配套文件，不重要</td></tr>
+</table>
+
+<h2>内部人交易与持仓（辅助信号）</h2>
+<table>
+  <tr><th style="width:70px">Form</th><th style="width:120px">中文名</th><th>内容</th><th>竞品监控重点</th></tr>
+  <tr class="important">
+    <td><strong>Form 4</strong></td><td>内部人交易报告</td><td>高管/董事/大股东买卖本公司股票，<strong>2 个工作日内</strong>披露。包含 Table I（直接持股）和 Table II（期权/衍生品）</td><td>看 <strong>Code P（主动买入）</strong> 和 <strong>Code S（主动卖出）</strong>。Code F（交税卖出）权重低（0.2），Code A（授予）不算主动交易。注意 10b5-1 计划的批量卖出</td>
+  </tr>
+  <tr>
+    <td><strong>Form 3</strong></td><td>初始持股声明</td><td>新任高管/董事/大股东首次披露持股，成为内部人后 10 天内提交</td><td>了解管理层激励结构（持股 = 和股东利益绑定）</td>
+  </tr>
+  <tr>
+    <td><strong>Form 5</strong></td><td>年度持股声明</td><td>财年结束后 45 天内，补充披露豁免交易（Form 4 没报的小额交易）</td><td>通常不重要，但可能藏有"忘了报的小额交易"——定期扫描有惊喜</td>
+  </tr>
+  <tr>
+    <td><strong>Form 144</strong></td><td>计划减持通知</td><td>大股东/内部人<strong>计划卖出</strong> ≥5,000 股或 ≥$50,000 的<strong>事前通知</strong>，有效期 90 天</td><td>提前获知可能的卖压。⚠️ 不是"已经卖了"，是"准备卖"。多份 Form 144 连续提交 = 持续减持信号</td>
+  </tr>
+  <tr class="important">
+    <td><strong>SC 13D</strong></td><td>主动投资者大额持仓</td><td>持股超 <strong>5%</strong> 的"主动投资者"，<strong>10 天内</strong>提交。<strong>Item 4 写明意图</strong>（"我们要推动分拆"等）</td><td>⭐⭐⭐⭐⭐ 极高价值。有 activist 盯上了这家公司？Item 4 措辞决定信号强度（具体动作 vs 模糊"被低估"）</td>
+  </tr>
+  <tr>
+    <td><strong>SC 13G</strong></td><td>被动投资者大额持仓</td><td>持股超 <strong>5%</strong> 的"被动投资者"（纯投资不干预），年度提交</td><td>了解谁在大笔持有（Vanguard/BlackRock 等）。变动小，信号弱</td>
+  </tr>
+  <tr class="important">
+    <td><strong>13F</strong></td><td>机构持仓报告</td><td>管理资产 <strong>>$1 亿</strong>的机构<strong>每季度</strong>披露持仓（季末 45 天内）</td><td>交叉持股分析的核心数据源。注意：<code>value_x1000</code> 字段名 = "以千美元为单位"，1000 倍错位是经典 bug。跨期对比<strong>看股数不看市值</strong></td>
+  </tr>
+</table>
+
+<h3>13D vs 13G：核心区别</h3>
+<table>
+  <tr><th>维度</th><th>Schedule 13D</th><th>Schedule 13G</th></tr>
+  <tr><td><strong>触发条件</strong></td><td>持股 >5% <strong>且意图影响公司经营</strong></td><td>持股 >5% <strong>且无意影响经营</strong></td></tr>
+  <tr><td><strong>提交时限</strong></td><td>达到 5% 后 10 天内</td><td>年度提交</td></tr>
+  <tr><td><strong>谁提交</strong></td><td>Activist、对冲基金</td><td>指数基金、养老金</td></tr>
+  <tr><td><strong>Item 4 意图</strong></td><td><strong>必须详细写</strong>（推动分拆？换 CEO？）</td><td>简短说明</td></tr>
+  <tr><td><strong>后续更新</strong></td><td>每次买卖 >1% 都要更新</td><td>年度更新</td></tr>
+  <tr><td><strong>竞品监控价值</strong></td><td>⭐⭐⭐⭐⭐ 极高</td><td>⭐ 低</td></tr>
+</table>
+
+<h3>Form 4 交易代码速查（详见 Lesson 0007）</h3>
+<table>
+  <tr><th style="width:80px">Code</th><th>含义</th><th>信号强度</th></tr>
+  <tr><td><strong>P</strong></td><td>主动买入</td><td>✅✅✅ 强正面</td></tr>
+  <tr><td><strong>S</strong></td><td>主动卖出</td><td>✅ 弱负面（可能是分散持仓）</td></tr>
+  <tr><td><strong>F</strong></td><td>交税卖出（期权行权时预扣税）</td><td>❌ 几乎没信号（10b5-1 标配）</td></tr>
+  <tr><td><strong>G</strong></td><td>赠与</td><td>❌ 弱信号（慈善/家族信托）</td></tr>
+  <tr><td><strong>A</strong></td><td>授予/行权</td><td>❌ 没信号（薪酬一部分）</td></tr>
+  <tr><td><strong>M</strong></td><td>期权行权</td><td>看行权后卖出的 Code F/S 配对</td></tr>
+</table>
+
+<h3>13F 单位转换陷阱（详见 Lesson 0006）</h3>
+<div style="background:#fff0f0;border-left:3px solid #c44;padding:0.6rem 1rem;margin:0.8rem 0;font-size:0.88rem;">
+  <strong>⚠️ value_x1000 字段</strong>：单位是<strong>千美元</strong>，不是美元也不是百万美元。<br>
+  <code>value_x1000 = 1,920,000</code> → 实际金额 = <code>1,920,000 × $1,000 = $1.92B</code><br>
+  验证方法：<code>股数 × 当时股价</code> 应大致匹配 <code>value_x1000 × 1000</code>（允许 ±5% 误差）<br>
+  错放 1000 倍 = 经典 bug。<strong>内部计算保持 SEC 原始单位，展示时统一除以 1000 显示为 $M</strong>。
+</div>
+
+<h2>其他常见类型（知道名字就行）</h2>
+<table>
+  <tr><th style="width:70px">Form</th><th>用途</th></tr>
+  <tr><td><strong>S-1</strong></td><td>IPO 注册文件——公司首次公开发行时提交。如果你想研究一家即将上市的竞品，这是必读的。</td></tr>
+  <tr><td><strong>S-4</strong></td><td>并购注册文件——涉及换股的并购交易。</td></tr>
+  <tr><td><strong>DEF 14A</strong></td><td>股东大会委托声明（Proxy Statement）——包含高管薪酬、董事会构成等治理信息。</td></tr>
+  <tr><td><strong>20-F</strong></td><td>外国公司的年度报告（外国公司不用 10-K，用 20-F）。优信的 20-F 会在 4 月底提交。</td></tr>
+  <tr><td><strong>6-K</strong></td><td>外国公司的"期中报告"——相当于 8-K，在母国发生重大事件时提交。优信和汽车之家会提交这个。</td></tr>
+</table>
+
+<div style="margin-top:2rem; font-size:0.85rem; color:#888;">
+  <strong>外国公司特别注意：</strong>优信 (UXIN) 和汽车之家 (ATHM) 不是美国本土公司，它们用 20-F（年报）替代 10-K，用 6-K（临时报告）替代 8-K。<br>
+  我们的竞品监控系统已自动处理这个差异——你不需要手动区分。
+</div>
+
+</body>
+</html>

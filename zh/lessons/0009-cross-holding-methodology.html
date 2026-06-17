@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 0009 — 交叉持股分析的方法论</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "ET Book", "Palatino Linotype", Palatino, "Noto Serif SC", "Source Han Serif SC", serif;
+    background: #fffff8; color: #111; line-height: 1.6;
+    max-width: 720px; margin: 2rem auto; padding: 0 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 0.3rem; font-weight: 400; font-style: italic; }
+  p { margin: 0.7rem 0; }
+  .sidenote {
+    float: right; clear: right; width: 180px; margin-right: -210px;
+    font-size: 0.82rem; color: #555; line-height: 1.4; margin-top: 0.2rem;
+  }
+  @media (max-width: 960px) { .sidenote { float: none; width: auto; margin-right: 0; margin-top: 0; font-style: italic; } }
+  blockquote { margin: 1rem 0; padding: 0.5rem 1rem; border-left: 3px solid #c44; background: #fff8f6; font-style: italic; color: #444; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+  th { font-weight: 500; background: #f8f8f4; }
+  code { background: #f4f4ee; padding: 1px 4px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f4f4ee; padding: 0.8rem 1rem; overflow-x: auto; font-size: 0.85rem; border-radius: 4px; margin: 0.8rem 0; }
+  .quiz { background: #f4f4ee; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 6px; }
+  .quiz h3 { margin-top: 0; font-style: normal; }
+  .quiz details { margin-top: 0.4rem; }
+  .takeaway { background: #fff3cd; border-left: 3px solid #f0b400; padding: 0.6rem 1rem; margin: 1.5rem 0; font-weight: 500; }
+  .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  .next { background: #f0f0e8; padding: 1rem 1.2rem; margin: 3rem 0 1rem; font-size: 0.95rem; }
+  a { color: #a33; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .scenario { background: #fafafa; border: 1px solid #e0e0e0; padding: 0.8rem 1rem; margin: 0.8rem 0; }
+  .scenario h4 { margin: 0 0 0.3rem; }
+  .scenario-confirm { border-left: 3px solid #4a4; }
+  .scenario-conflict { border-left: 3px solid #f0b400; }
+  .scenario-danger { border-left: 3px solid #c44; }
+  .scenario-trend { border-left: 3px solid #36a; }
+  .checklist { background: #f4f4ee; padding: 1rem 1.2rem; margin: 1rem 0; }
+  .checklist li { margin: 0.3rem 0; }
+</style>
+</head>
+<body>
+
+<div class="meta">
+  Lesson 0009 · <a href="0008-13dg-activist-investors.html">← 上一课：13D/G Activist</a> · <a href="../reference/sec-form-types.html">参考：SEC 表格速查表</a>
+</div>
+
+<h1>交叉持股分析的方法论<br><small style="font-size:1rem;color:#666;">这份报告到底在回答什么问题，怎么读懂它</small></h1>
+
+<p>
+  前面 3 课（13F / Form 4 / 13D-G）讲了交叉持股分析的全部数据源。这一课回到方法论——<strong>把这些数据组装成报告时，要遵循什么原则？</strong>
+</p>
+
+<p>
+  参考对象是 IHS Markit 的 P4 报告（Cross Holding / Peer Comparison）。我们的 Dashboard + Markdown 报告是对它的复刻，但范围更小、自动化程度更低。本质是<strong>学它的设计哲学</strong>，不是为了复刻它的每一页。
+</p>
+
+<div class="takeaway">
+  <strong>核心设计哲学：</strong>一份好的交叉持股报告不是"把所有数据都堆在一页上"，而是<strong>每一页回答一个具体的投资问题</strong>。读者翻到第几页，心里就要对应一个问题——"我在找什么答案"。
+</div>
+
+<h2>每页回答一个具体的投资问题</h2>
+
+<p>IHS Markit P4 报告有 10 页，每页对应一个明确的投资问题。下表是完整的"页-问题-用途"映射：</p>
+
+<table>
+  <tr><th>页</th><th>表格/图表</th><th>回答的投资问题</th><th>下游怎么用</th></tr>
+  <tr><td>P2</td><td>Top Holders Positions</td><td><strong>谁在重仓我们和竞争对手？</strong></td><td>识别"聪明钱"的配置——哪些大机构同时持有我们和竞品</td></tr>
+  <tr><td>P3</td><td>Top Holders Changes</td><td><strong>这些大机构在加仓还是减仓？</strong></td><td>判断机构情绪的边际变化——比静态持仓更有信息量</td></tr>
+  <tr><td>P4</td><td>Activists</td><td><strong>哪些激进投资者在盯着我们或竞品？</strong></td><td>预警潜在的 activist campaign</td></tr>
+  <tr><td>P5</td><td>Top Buyers</td><td><strong>谁在积极买入竞品赛道？</strong></td><td>发现新进入的资金——可能意味着有人看好这个行业</td></tr>
+  <tr><td>P6</td><td>Top Sellers</td><td><strong>谁在撤离竞品赛道？</strong></td><td>预警资金外流——可能意味着行业基本面在恶化</td></tr>
+  <tr><td>P7</td><td>Initiations / Liquidations</td><td><strong>谁刚进入/完全退出？</strong></td><td>最极端的信号——新建仓 = 强烈看多，清仓 = 强烈看空</td></tr>
+  <tr><td>P8</td><td>Active/Passive 取向</td><td><strong>持仓主要是主动管理还是被动跟踪？</strong></td><td>被动资金多 = 变动可能是指数调仓</td></tr>
+  <tr><td>P9</td><td>投资风格分类</td><td><strong>持有者是价值型还是成长型投资者？</strong></td><td>价值 vs 成长投资者的轮动反映公司生命周期</td></tr>
+  <tr><td>P10</td><td>Turnover 分布</td><td><strong>持有者在频繁交易还是长期持有？</strong></td><td>高频交易者 = 信号噪音大；长期持有者 = 信号强</td></tr>
+</table>
+
+<h2>跨页之间的信号叠加（重要）</h2>
+
+<p>
+  <strong>单个页面的信号价值有限。</strong>真正的洞察来自跨页交叉验证。下面 4 个场景是经典的信号叠加模式：
+</p>
+
+<div class="scenario scenario-confirm">
+  <h4>场景 1：确认性信号（看多）</h4>
+  <p>P2: 某机构是 Top 1 持有人<br>
+  P3: 该机构大幅加仓<br>
+  P5: 该机构是 Top Buyer</p>
+  <p>→ <strong>强烈的看多信号。</strong>大机构在真金白银加仓，三重确认。</p>
+</div>
+
+<div class="scenario scenario-conflict">
+  <h4>场景 2：矛盾性信号（需深挖）</h4>
+  <p>P2: 某机构是 Top 3 持有人<br>
+  P3: 该机构小幅减仓<br>
+  P6: 但该机构不是 Top Seller（减仓金额不够大）</p>
+  <p>→ <strong>可能是正常的组合再平衡</strong>，不一定是看空。规模太大反而难快速调仓。</p>
+</div>
+
+<div class="scenario scenario-danger">
+  <h4>场景 3：危险信号（预警）</h4>
+  <p>P4: 某 activist 机构持有竞品<br>
+  P7: 该 activist 本期新建仓（首次进入）</p>
+  <p>→ <strong>高度关注——activist 进入往往意味着即将推动变革。</strong>立刻查 13D Item 4 看意图。</p>
+</div>
+
+<div class="scenario scenario-trend">
+  <h4>场景 4：行业转向信号</h4>
+  <p>P8: 被动资金占比上升，主动资金占比下降<br>
+  P9: 成长型投资者减仓，价值型投资者加仓</p>
+  <p>→ <strong>行业从"高增长预期"转向"价值重估"。</strong>公司基本面可能进入成熟期。</p>
+</div>
+
+<h2>正确的报告阅读顺序（给老板看的）</h2>
+
+<p>
+  战略投资部的同事拿到一份交叉持股报告后，<strong>不要从头读到尾</strong>。应该按"先快后慢"的节奏：
+</p>
+
+<pre>
+30 秒速览（看你会不会点开详读）:
+  1. 概览卡片: 覆盖机构数、新建仓数、清仓数
+  2. Top 3 Holders 是谁
+
+2 分钟快速判断（看趋势方向）:
+  3. Top Buyers / Sellers 前 5 名
+  4. 有没有 Activist 新进入
+  5. 行业是主动 vs 被动 资金在变
+
+5 分钟深度分析（看交叉验证）:
+  6. Initiations 前 5 + Liquidations 前 5
+  7. 跨页交叉验证（场景 1-4）
+  8. 风格/Turnover 趋势变化
+
+15 分钟研究:
+  9. 深入某个具体机构（看它的全持仓变化）
+  10. 与 8-K / Earnings Call 交叉（机构在加仓，但管理层在说什么？）
+</pre>
+
+<p>
+  你的 Dashboard 和报告设计应该<strong>支持这个阅读顺序</strong>——把概览卡片、Top Holders、Buyers/Sellers 放在最显眼位置，深度数据藏在 tab 里。
+</p>
+
+<div class="takeaway">
+  <strong>设计的反模式：</strong>把所有数据放在一起，标注"Toggle to show details"。这等于让用户自己组装报告。好的设计是<strong>把 80% 的洞察放在 20% 的版面里</strong>——让读者 30 秒能看出方向，5 分钟能做出判断。
+</div>
+
+<h2>从 IHS 报告学到的 6 条设计原则</h2>
+
+<ol>
+  <li><strong>每页回答一个问题。</strong>不要把所有东西堆在一页上。</li>
+  <li><strong>每页底部留 Commentary 空白。</strong>分析师要写判断，系统只提供数据。机器填不满的那一行 = 给人的判断留空间。</li>
+  <li><strong>表格列要对齐 IHS 的列定义。</strong>Style、Turnover、Peer Average 缺一不可——这是行业通用语言，偏离了读者会困惑。</li>
+  <li><strong>排名表必须有明确的排名指标。</strong>"按什么排的"必须写在标题里——按市值？按变动金额？按股数变化？</li>
+  <li><strong>图表和表格配套。</strong>饼图看分布，柱状图看资金流向——两者互相印证，不重复。</li>
+  <li><strong>免责声明必须可见。</strong>不是"在文档末尾有一行小字"——而是在每页底部都有"data as of [date]"和数据局限性提示。</li>
+</ol>
+
+<h2>输出质量的自检清单</h2>
+
+<p>
+  交付甲方/老板之前，逐项检查：
+</p>
+
+<div class="checklist">
+  <ol>
+    <li>☐ 所有表格的金额单位是否一致（$M）</li>
+    <li>☐ 所有排名是否按正确指标排序（不是按字母序、不是按 CIK）</li>
+    <li>☐ 是否存在 institution_name = None 的行（采集失败）</li>
+    <li>☐ 是否存在 delta_pct = inf 或 NaN（除零未处理）</li>
+    <li>☐ Buyers 和 Sellers 是否都有数据（如果某一边完全为空，99% 是 bug）</li>
+    <li>☐ 跨期对比的上期和本期是否确实是相邻两期（不是跳期）</li>
+    <li>☐ 所有免责声明是否在报告中可见（不是在代码注释里）</li>
+    <li>☐ 数据时滞是否在报告日期中体现（"数据截止 2026-03-31" vs "报告生成日 2026-06-17"）</li>
+    <li>☐ 13D 申报的 Item 4 文本是否被人工 review 过（不是直接展示）</li>
+    <li>☐ 中国竞品（UXIN/ATHM）是否标注了 "Section 16 不适用" 而非"无数据"</li>
+  </ol>
+</div>
+
+<h2>Carvana 的一次跨页信号叠加（实战）</h2>
+
+<p>以下是 2026Q1 我们对 Carvana 的真实分析过程（用 4 个页面的数据交叉验证）：</p>
+
+<table>
+  <tr><th>页面</th><th>观察到的信号</th></tr>
+  <tr><td>P2 (Top Holders)</td><td>Vanguard 持仓 $1.92B（Top 1），BlackRock 持仓 $1.53B（Top 2）</td></tr>
+  <tr><td>P3 (Changes)</td><td>Vanguard 持股 <strong>不变</strong>（股数 12.8M → 12.8M）</td></tr>
+  <tr><td>P5 (Top Buyers)</td><td>Baupost Group <strong>新增</strong> $480M 持仓</td></tr>
+  <tr><td>P4 (Activists)</td><td>无新 activist 进入</td></tr>
+</table>
+
+<p><strong>分析：</strong></p>
+
+<ul>
+  <li>Vanguard 和 BlackRock 是<strong>被动指数资金</strong>（共同基金 + ETF），它们的持股不变 = 指数调仓节奏正常，没有恐慌性买盘或抛盘</li>
+  <li>Baupost 新增 $480M 是<strong>重要信号</strong>——Baupost 是知名的价值投资者（之前也持有 2022 年 Carvana 困境债券），这表明价值投资者重新看好 Carvana</li>
+  <li>无 activist 进入 = 短期内不会有控制权变更风险</li>
+</ul>
+
+<p>
+  <strong>综合判断：</strong>Carvana 2026Q1 机构持仓格局是"<strong>指数资金稳定 + 价值投资者重新进入 + 无 activist 干扰</strong>"——这是一个偏正面的状态。结合 Lesson 0002 的毛利率改善信号，可以初步判断 Carvana 正在经历<strong>价值重估</strong>。
+</p>
+
+<p>
+  这个判断<strong>不是任何单一页面能给出的</strong>——它是跨页交叉验证的结果。这就是交叉持股分析的真正价值。
+</p>
+
+<hr>
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<h3>Q1: P5 Top Buyers 排名里，BlackRock 加仓 $50M，Vanguard 加仓 $0，某家小机构首次建仓 $200M。谁应该排在前面？</h3>
+<p><input type="text" id="q1" placeholder="用一两句话回答"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>看排名指标。</strong>如果按"绝对加仓金额"排名：BlackRock $50M &gt; 小机构 $200M = 错误结论（小机构虽然 $200M 大于 BlackRock 的 $50M，但 BlackRock 是被动指数资金，$50M 可能是指数调仓的被动结果，没有信号价值；小机构 $200M 首次建仓 = 强主动信号）。正确做法：<strong>按"主动加仓金额"（剔除被动指数资金）排名</strong>，或者<strong>同时列两个排名表</strong>——一个看绝对金额，一个看"主动新增"金额。IHS P5 通常用第二个口径。</p>
+  </details>
+</div>
+
+<h3>Q2: Top Buyers 是 $300M，Top Sellers 是 $0。这种"单向流动"正常吗？</h3>
+<p><input type="text" id="q2" placeholder="用一两句话回答"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>不正常——99% 是 bug。</strong>正常情况下，一家上市公司的机构持仓变动是<strong>双向的</strong>：有人买必然有人卖（除非常有大宗交易）。如果 Top Sellers 完全为 0，常见原因：① 跨期对比出 bug（prev 期没拉到数据，所以所有"减仓"都被识别为"清仓"而不是"seller"）；② 字段映射错（应该填 value 填成了 shares）；③ 数据源有部分缺失。在自检清单里加一条：<strong>"Buyers 和 Sellers 是否都有数据"</strong>——99% 的"单向流动"都是采集 bug。</p>
+  </details>
+</div>
+
+<h3>Q3: 看到 P4 Activists 名单里突然出现了一家不在 ACTIVIST_INSTITUTIONS 静态名单里的对冲基金，对 CVNA 新建仓 5.2%。你的判断流程是什么？</h3>
+<p><input type="text" id="q3" placeholder="用一两句话描述你的流程"></p>
+<div class="reveal">
+  <details>
+    <summary>点击查看答案</summary>
+    <p><strong>三步：① 验证申报真实性 → ② 提取 Item 4 看意图 → ③ 评估对 CVNA 的潜在影响。</strong>① 看 SEC EDGAR 上 13D 的具体内容，确认是 13D（主动）不是 13G（被动），CIK 是否有效；② 仔细读 Item 4，看 activist 的具体诉求（要分拆？换 CEO？推动 M&A？）；③ 如果是分拆或推动 M&A 的诉求，CVNA 股价短期会有剧烈反应，要立刻准备应急方案。同时<strong>把该机构加入 ACTIVIST_INSTITUTIONS 静态名单</strong>，确保下次系统能识别。这个流程应该在 Dashboard 里以"alert + link to 13D"的形式实现，而不是手工跑一遍。</p>
+  </details>
+</div>
+
+</div>
+
+<div style="background:#f0f0e8;padding:1rem 1.2rem;margin:3rem 0 1rem;font-size:0.95rem;">
+  <strong>系列完结。</strong>9 课覆盖了完整的竞品监控体系：<br>
+  0001-0005 SEC 基础与监控框架（公司角度）<br>
+  0006-0008 持仓与交易（第三方角度：13F / Form 4 / 13D-G）<br>
+  0009 交叉持股方法论（综合运用）<br><br>
+  <strong>下一步：</strong>回到 PRD v2.0（<code>/Users/liuming/sec/PRD-competitor-intel-mvp-v2.md</code>），对照模块 F 的设计文档，你现在应该能理解每个 cross_holding.py 函数在做什么、为什么这么设计、输出怎么解读了。
+</div>
+
+<hr style="margin-top:3rem;">
+<p style="font-size:0.85rem;color:#888;">
+  全程回顾：<a href="0001-sec-filing-101.html">0001</a> → <a href="0002-financial-metrics-used-car.html">0002</a> → <a href="0003-8k-deep-dive.html">0003</a> → <a href="0004-earnings-call.html">0004</a> → <a href="0005-monitoring-framework.html">0005</a> → <a href="0006-13f-institutional-holdings.html">0006</a> → <a href="0007-form4-insider-trading.html">0007</a> → <a href="0008-13dg-activist-investors.html">0008</a> → 0009<br>
+  参考文档：<a href="../reference/sec-form-types.html">SEC 表格类型速查表</a>（可打印）<br>
+  想复习任何一课，直接说"重新打开 lesson 000X"。
+</p>
+
+</body>
+</html>
