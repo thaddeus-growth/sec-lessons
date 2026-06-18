@@ -7,14 +7,14 @@
 | Language | Code | Directory | Status |
 |----------|------|-----------|--------|
 | 🇨🇳 中文 (Chinese, original) | `zh` | [`zh/`](./zh/) | ✅ **Complete** — all 9 lessons + learning records + reference |
-| 🇺🇸 English | `en` | [`en/`](./en/) | 🟡 **6/9 lessons** — 0001-0006 done; 0007-0009 + learning records in progress |
-| 🇰🇷 한국어 (Korean) | `ko` | [`ko/`](./ko/) | 🟡 **1/9 lessons** — all learning records + meta files done; lessons in progress |
-| 🇪🇸 Español (Spanish) | `es` | [`es/`](./es/) | 🔴 **1/9 lessons** — meta files done; lessons mostly in progress |
-| 🇩🇪 Deutsch (German) | `de` | [`de/`](./de/) | 🔴 **1/9 lessons** — meta files done; lessons in progress |
-| 🇯🇵 日本語 (Japanese) | `ja` | [`ja/`](./ja/) | 🔴 **2/9 lessons** — lessons in progress |
-| 🇫🇷 Français (French) | `fr` | [`fr/`](./fr/) | 🔴 **1/9 lessons** — lessons in progress |
+| 🇺🇸 English | `en` | [`en/`](./en/) | ✅ **Complete** — all 9 lessons + learning records + reference |
+| 🇰🇷 한국어 (Korean) | `ko` | [`ko/`](./ko/) | ✅ **Complete** — all 9 lessons + learning records + reference |
+| 🇪🇸 Español (Spanish) | `es` | [`es/`](./es/) | ✅ **Complete** — all 9 lessons + learning records + reference |
+| 🇩🇪 Deutsch (German) | `de` | [`de/`](./de/) | ✅ **Complete** — all 9 lessons + learning records + reference |
+| 🇯🇵 日本語 (Japanese) | `ja` | [`ja/`](./ja/) | ✅ **Complete** — all 9 lessons + learning records + reference |
+| 🇫🇷 Français (French) | `fr` | [`fr/`](./fr/) | ✅ **Complete** — all 9 lessons + learning records + reference |
 
-> **Translations are a work in progress.** Primarily contributed by a model with occasional tool issues. If you are a native speaker of es/ja/ko/de/fr and can help complete the translations, please see [CONTRIBUTING.md](./CONTRIBUTING.md) — contributions welcome!
+> **All 7 languages are now complete.** Each language has 23 files: 9 lessons (HTML), 1 reference cheat sheet (HTML), 9 learning records (Markdown), plus MISSION.md, NOTES.md, RESOURCES.md, and README.md. If you spot an issue, please open an issue in your language.
 
 ## What is this course?
 
